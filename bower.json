@@ -1,0 +1,22 @@
+{
+  "name": "contacts-app",
+  "version": "0.0.0",
+  "dependencies": {
+    "core-elements": "Polymer/core-elements#^0.4.0",
+    "paper-elements": "Polymer/paper-elements#^0.4.0",
+    "polymer": "Polymer/polymer#^0.4.0",
+    "Faker": "~2.0.0",
+    "core-list": "Polymer/core-list#56d998e834a880a58a705ae7a6b0ddb7967f8864",
+    "core-image": "Polymer/core-image#~0.4.2",
+    "cache-polyfill": "coonsta/cache-polyfill",
+    "lazy-pages": "robdodson/lazy-pages"
+  },
+  "devDependencies": {
+    "polymer-test-tools": "Polymer/polymer-test-tools#^0.4.0"
+  },
+  "resolutions": {
+    "core-component-page": "^0.4.0",
+    "platform": "^0.4.0",
+    "polymer": "^0.4.0"
+  }
+}
