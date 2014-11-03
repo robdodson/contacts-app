@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+.row {
+  padding: 18px 16px;
+  border-bottom: 1px solid #E6E6E6;
+  cursor: pointer;
+}
+.row core-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: lightgray;
+}
+.row div {
+  margin-left: 28px;
+}

@@ -1,0 +1,41 @@
+<link rel="import"
+  href="../elements.shared.html">
+<link rel="import"
+  href="../../bower_components/core-list/core-list.html">
+<link rel="import"
+  href="../../bower_components/core-image/core-image.html">
+
+<polymer-element name="contacts-list" fit layout vertical>
+  <template>
+    <link rel="stylesheet" href="contacts-list.css">
+    <core-list id="list" flex>
+      <template>
+        <a href="#/contacts/{{index}}">
+          <div class="row" layout horizontal center>
+            <core-image src="{{model.avatar}}" preload sizing="cover">
+            </core-image>
+            <div flex>{{model.name}}</div>
+          </div>
+        </a>
+      </template>
+    </core-list>
+  </template>
+  <script>
+  (function() {
+
+    Polymer({
+      ready: function() {
+        var data = [];
+        for(var i = 0; i < 300; i++) {
+          data.push({
+            name: faker.name.findName(),
+            avatar: faker.image.avatar()
+          });
+        }
+        this.$.list.data = data;
+      }
+    });
+
+  })();
+  </script>
+</polymer-element>

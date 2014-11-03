@@ -190,13 +190,24 @@ module.exports = function (grunt) {
       }
     },
     vulcanize: {
-      default: {
+      critical: {
         options: {
           strip: true
         },
         files: {
-          '<%= yeoman.dist %>/elements/elements.vulcanized.html': [
-            '<%= yeoman.dist %>/elements/elements.html'
+          '<%= yeoman.dist %>/elements/elements.critical.vulcanized.html': [
+          '<%= yeoman.dist %>/elements/elements.critical.html'
+          ]
+        }
+      },
+      shared: {
+        options: {
+          strip: true,
+          config: '<%= yeoman.app %>/elements/vulcanize.shared.config.json'
+        },
+        files: {
+          '<%= yeoman.dist %>/elements/elements.shared.vulcanized.html': [
+          '<%= yeoman.dist %>/elements/elements.shared.html'
           ]
         }
       }

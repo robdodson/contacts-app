@@ -14,36 +14,36 @@
   <!-- endbuild-->
 
   <script src="bower_components/platform/platform.js"></script>
-  <!-- build:vulcanized elements/elements.vulcanized.html -->
-  <link rel="import" href="elements/elements.html">
+  <!-- build:vulcanized elements/elements.critical.vulcanized.html -->
+  <link rel="import" href="elements/elements.critical.html">
   <!-- endbuild-->
 </head>
 
-<body unresolved fullbleed fit layout vertical>
+<body unresolved fullbleed layout vertical>
 
-  <core-list flex>
-    <template>
-      <div class="row" layout horizontal center>
-        <core-image src="{{model.avatar}}" preload sizing="cover"></core-image>
-        <div flex>{{model.name}}</div>
-        <core-icon icon="chevron-right"></core-icon>
-      </div>
-    </template>
-  </core-list>
+  <template is="auto-binding" id="app">
 
-  <script>
-    document.addEventListener('polymer-ready', function() {
-      var list = document.querySelector('core-list');
-      var data = [];
-      for(var i = 0; i < 300; i++) {
-        data.push({
-          name: faker.name.findName(),
-          avatar: faker.image.avatar()
-        });
-      }
-      list.data = data;
-    });
-  </script>
+    <!-- Routing -->
+    <flatiron-director id="router" route="{{route}}" autoHash>
+    </flatiron-director>
+
+    <!-- Pages -->
+    <lazy-pages id="pages" selected="{{route}}" valueattr="route" fit>
+
+      <contacts-page route="contacts"
+                     path="elements/contacts-page/contacts-page.html">
+      </contacts-page>
+
+      <info-page route="contacts/:id"
+                 path="elements/info-page/info-page.html">
+      </info-page>
+
+      <add-page route="add"
+                path="elements/add-page/add-page.html">
+      </add-page>
+
+    </lazy-pages>
+  </template>
 
   <!-- build:js scripts/app.js -->
   <script src="bower_components/Faker/build/build/faker.js"></script>
