@@ -26,7 +26,12 @@
       <!-- Main -->
       <div tool>All Contacts</div>
       <div fit>
-        <contacts-list id="list"></contacts-list>
+        <contacts-list id="list"
+                       on-contacts-list-ready="{{loaded}}">
+        </contacts-list>
+        <a href="/#/add">
+          <paper-fab icon="add"></paper-fab>
+        </a>
       </div>
     </core-scaffold>
   </template>
@@ -34,9 +39,7 @@
   (function() {
 
     Polymer({
-      ready: function() {
-        this.loaded();
-      }
+
     });
 
   })();

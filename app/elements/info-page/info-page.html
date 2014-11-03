@@ -1,16 +1,36 @@
-<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import"
+  href="../elements.shared.html">
 
-<polymer-element name="info-page" attributes="">
+<polymer-element name="info-page" extends="base-page" layout vertical>
   <template>
     <link rel="stylesheet" href="info-page.css">
+
+    <core-scaffold>
+      <!-- Drawer -->
+      <core-header-panel navigation flex mode="seamed">
+        <core-toolbar></core-toolbar>
+        <core-menu>
+          <core-item icon="settings" label="item1"></core-item>
+          <core-item icon="settings" label="item2"></core-item>
+        </core-menu>
+      </core-header-panel>
+
+      <!-- Main -->
+      <div tool>John Doe</div>
+      <div fit>
+        <h1>info</h1>
+      </div>
+    </core-scaffold>
   </template>
   <script>
-    (function () {
+  (function() {
 
-      Polymer({
-        // define element prototype here
-      });
+    Polymer({
+      ready: function() {
+        this.loaded();
+      }
+    });
 
-    })();
+  })();
   </script>
 </polymer-element>

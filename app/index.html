@@ -21,29 +21,21 @@
 
 <body unresolved fullbleed layout vertical>
 
-  <template is="auto-binding" id="app">
+  <lazy-pages id="pages" route="#/contacts" fit>
 
-    <!-- Routing -->
-    <flatiron-director id="router" route="{{route}}" autoHash>
-    </flatiron-director>
+    <contacts-page route="contacts"
+                   path="elements/contacts-page/contacts-page.html">
+    </contacts-page>
 
-    <!-- Pages -->
-    <lazy-pages id="pages" selected="{{route}}" valueattr="route" fit>
+    <info-page route="contacts/:id"
+               path="elements/info-page/info-page.html">
+    </info-page>
 
-      <contacts-page route="contacts"
-                     path="elements/contacts-page/contacts-page.html">
-      </contacts-page>
+    <add-page route="add"
+              path="elements/add-page/add-page.html">
+    </add-page>
 
-      <info-page route="contacts/:id"
-                 path="elements/info-page/info-page.html">
-      </info-page>
-
-      <add-page route="add"
-                path="elements/add-page/add-page.html">
-      </add-page>
-
-    </lazy-pages>
-  </template>
+  </lazy-pages>
 
   <!-- build:js scripts/app.js -->
   <script src="bower_components/Faker/build/build/faker.js"></script>

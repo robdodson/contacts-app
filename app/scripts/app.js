@@ -6,13 +6,7 @@
 // });
 
 // Select auto-binding template and use as the top level of our app
-var app = document.querySelector('#app');
-app.addEventListener('template-bound', function(e) {
-
-  console.timeStamp('template bound');
-
-  // Setup routing
-  var DEFAULT_ROUTE = 'contacts';
-  app.route = this.$.router.route || DEFAULT_ROUTE;
+var app = document.querySelector('#pages');
+document.addEventListener('polymer-ready', function() {
 
 });
