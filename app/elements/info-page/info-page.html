@@ -1,26 +1,63 @@
-<link rel="import"
-  href="../elements.shared.html">
+<link rel="import" href="../elements.critical.html">
+<link rel="import" href="../elements.shared.html">
+<link rel="import" href="../../bower_components/core-icons/communication-icons.html">
 
-<polymer-element name="info-page" extends="base-page" layout vertical>
+<polymer-element name="info-page" extends="base-page">
   <template>
     <link rel="stylesheet" href="info-page.css">
 
-    <core-scaffold>
-      <!-- Drawer -->
-      <core-header-panel navigation flex mode="seamed">
-        <core-toolbar></core-toolbar>
-        <core-menu>
-          <core-item icon="settings" label="item1"></core-item>
-          <core-item icon="settings" label="item2"></core-item>
-        </core-menu>
-      </core-header-panel>
-
-      <!-- Main -->
-      <div tool>John Doe</div>
-      <div fit>
-        <h1>info</h1>
+    <!-- Phone -->
+    <div class="group">
+      <div class="item">
+        <core-icon icon="communication:phone"></core-icon>
+        <div class="double-line-1">(315) 546-0060</div>
+        <div class="double-line-2">Home</div>
       </div>
-    </core-scaffold>
+      <div class="item">
+        <div class="double-line-1">(675) 233-8464</div>
+        <div class="double-line-2">Work</div>
+      </div>
+      <div class="item">
+        <div class="double-line-1">(797) 158-2516</div>
+        <div class="double-line-2">Cell</div>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="group">
+      <div class="item">
+        <core-icon icon="mail"></core-icon>
+        <div class="double-line-1">(315) 546-0060</div>
+        <div class="double-line-2">Home</div>
+      </div>
+      <div class="item">
+        <div class="double-line-1">(675) 233-8464</div>
+        <div class="double-line-2">Work</div>
+      </div>
+      <div class="item">
+        <div class="double-line-1">(797) 158-2516</div>
+        <div class="double-line-2">Cell</div>
+      </div>
+    </div>
+
+    <!-- Location -->
+    <div class="group">
+      <div class="item">
+        <core-icon icon="room"></core-icon>
+        <div class="double-line-1">(315) 546-0060</div>
+        <div class="double-line-2">Home</div>
+      </div>
+      <div class="item">
+        <div class="double-line-1">(675) 233-8464</div>
+        <div class="double-line-2">Work</div>
+      </div>
+      <div class="item">
+        <div class="double-line-1">(797) 158-2516</div>
+        <div class="double-line-2">Cell</div>
+      </div>
+    </div>
+
+    <paper-fab icon="create"></paper-fab>
   </template>
   <script>
   (function() {

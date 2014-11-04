@@ -9,4 +9,11 @@
 var app = document.querySelector('#pages');
 document.addEventListener('polymer-ready', function() {
 
+  var menu = document.querySelector('#btn-menu');
+  var drawerPanel = document.querySelector('core-drawer-panel');
+
+  menu.addEventListener('click', function() {
+    drawerPanel.togglePanel();
+  });
+
 });

@@ -1,47 +1,21 @@
-<link rel="import"
-  href="../elements.shared.html">
-<link rel="import"
-  href="../contacts-list/contacts-list.html">
-
-<!--
-  TODO:
-  - Alphabetical grouping
-  - Replace faker with core-ajax
--->
+<link rel="import" href="../elements.shared.html">
+<link rel="import" href="../contacts-list/contacts-list.html">
 
 <polymer-element name="contacts-page" extends="base-page" layout vertical>
   <template>
     <link rel="stylesheet" href="contacts-page.css">
 
-    <core-scaffold>
-      <!-- Drawer -->
-      <core-header-panel navigation flex mode="seamed">
-        <core-toolbar></core-toolbar>
-        <core-menu>
-          <core-item icon="settings" label="item1"></core-item>
-          <core-item icon="settings" label="item2"></core-item>
-        </core-menu>
-      </core-header-panel>
-
-      <!-- Main -->
-      <div tool>All Contacts</div>
-      <div fit>
-        <contacts-list id="list"
-                       on-contacts-list-ready="{{loaded}}">
-        </contacts-list>
-        <a href="/#/add">
-          <paper-fab icon="add"></paper-fab>
-        </a>
-      </div>
-    </core-scaffold>
+    <contacts-list id="list" on-contacts-list-ready="{{loaded}}">
+    </contacts-list>
+    <a href="/#/add">
+      <paper-fab icon="add"></paper-fab>
+    </a>
   </template>
   <script>
   (function() {
-
     Polymer({
 
     });
-
   })();
   </script>
 </polymer-element>

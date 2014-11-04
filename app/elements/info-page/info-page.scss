@@ -1,2 +1,30 @@
 @import '../styles/base';
 @import '../styles/buttons';
+
+*,*::after,*::before {
+  box-sizing: border-box;
+}
+.group {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  position: relative;
+}
+.item {
+  padding: 10px 72px;
+  color: rgb(102, 102, 102);
+}
+.item core-icon {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  color: rgb(33, 33, 33);
+}
+.double-line-1 {
+  margin-top: 5px;
+  margin-bottom: 6px;
+}
+.double-line-2 {
+  font-size: 13px;
+  line-height: 13px;
+  color: rgba(0, 0, 0, 0.4);
+}

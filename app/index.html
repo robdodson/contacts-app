@@ -21,21 +21,35 @@
 
 <body unresolved fullbleed layout vertical>
 
-  <lazy-pages id="pages" route="#/contacts" fit>
+  <core-drawer-panel>
+    <core-header-panel drawer>
+      <core-toolbar>Menu</core-toolbar>
 
-    <contacts-page route="contacts"
-                   path="elements/contacts-page/contacts-page.html">
-    </contacts-page>
+    </core-header-panel>
+    <core-header-panel main>
+      <core-toolbar>
+        <core-icon-button id="btn-menu" icon="menu"></core-icon-button>
+        <div>All Contacts</div>
+      </core-toolbar>
+      <div fit>
+        <lazy-pages id="pages" fit>
 
-    <info-page route="contacts/:id"
-               path="elements/info-page/info-page.html">
-    </info-page>
+          <contacts-page route="/"
+                         path="elements/contacts-page/contacts-page.html">
+          </contacts-page>
 
-    <add-page route="add"
-              path="elements/add-page/add-page.html">
-    </add-page>
+          <info-page route="contacts/:id"
+                     path="elements/info-page/info-page.html">
+          </info-page>
 
-  </lazy-pages>
+          <add-page route="add"
+                    path="elements/add-page/add-page.html">
+          </add-page>
+
+        </lazy-pages>
+      </div>
+    </core-header-panel>
+  </core-drawer-panel>
 
   <!-- build:js scripts/app.js -->
   <script src="bower_components/Faker/build/build/faker.js"></script>
