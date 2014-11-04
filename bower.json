@@ -6,7 +6,7 @@
     "paper-elements": "Polymer/paper-elements#^0.4.0",
     "polymer": "Polymer/polymer#^0.4.0",
     "Faker": "~2.0.0",
-    "core-list": "Polymer/core-list#56d998e834a880a58a705ae7a6b0ddb7967f8864",
+    "core-list": "Polymer/core-list#1b0d8357a057dc22025142ff217dcf6cba32044b",
     "core-image": "Polymer/core-image#~0.4.2",
     "cache-polyfill": "coonsta/cache-polyfill",
     "lazy-pages": "robdodson/lazy-pages"

@@ -1,14 +1,41 @@
-<link rel="import" href="../elements.shared.html">
-<link rel="import" href="../contacts-list/contacts-list.html">
+<link rel="import"
+  href="../elements.shared.html">
+<link rel="import"
+  href="../../bower_components/core-ajax/core-ajax.html">
+<link rel="import"
+  href="../../bower_components/core-list/core-list.html">
+<link rel="import"
+  href="../../bower_components/core-image/core-image.html">
+
+<!--
+  TODO:
+  - Alphabetical grouping
+-->
 
 <polymer-element name="contacts-page" extends="base-page">
   <template>
     <link rel="stylesheet" href="contacts-page.css">
 
-    <contacts-list id="list"
-                   on-contacts-list-ready="{{loaded}}"
-                   fit layout vertical>
-    </contacts-list>
+    <core-ajax url="https://polymer-contacts.firebaseio.com/contacts.json"
+               response="{{data}}"
+               on-core-response="{{loaded}}"
+               auto>
+    </core-ajax>
+    <!--
+    Possible bug? Without this wrapping div I can't change
+    the scrollTarget of the core-list
+    -->
+    <core-list id="list" data="{{data}}">
+      <template>
+        <a href="/#/contacts/{{index}}">
+          <div class="row" layout horizontal center>
+            <core-image src="{{model.avatar}}" preload sizing="cover">
+            </core-image>
+            <div flex>{{model.name}}</div>
+          </div>
+        </a>
+      </template>
+    </core-list>
     <a href="/#/add">
       <paper-fab icon="add"></paper-fab>
     </a>
@@ -16,7 +43,17 @@
   <script>
   (function() {
     Polymer({
+      ready: function() {
+        return this.$.list.scrollTarget = window.app.scroller;
+      },
+      // This breaks everything... :(
+      XactiveChanged: function(oldVal, newVal) {
+        if (newVal !== undefined) {
+          return this.$.list.scrollTarget = window.app.scroller;
+        }
 
+        this.$.list.scrollTarget = this;
+      }
     });
   })();
   </script>
