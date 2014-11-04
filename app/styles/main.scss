@@ -3,6 +3,10 @@ body {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
+html /deep/ a {
+  color: rgb(102, 102, 102);
+  text-decoration: none;
+}
 core-drawer-panel:not([narrow]) #btn-menu {
   // display: none;
 }
