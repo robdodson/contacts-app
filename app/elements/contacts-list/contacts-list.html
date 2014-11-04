@@ -12,7 +12,7 @@
   - Alphabetical grouping
 -->
 
-<polymer-element name="contacts-list" fit layout vertical>
+<polymer-element name="contacts-list">
   <template>
     <link rel="stylesheet" href="contacts-list.css">
     <core-ajax url="https://polymer-contacts.firebaseio.com/contacts.json"
@@ -36,6 +36,9 @@
   (function() {
 
     Polymer({
+      domReady: function() {
+        this.$.list.scrollTarget = window.app.scroller;
+      },
       onAjaxResponse: function() {
         this.fire('contacts-list-ready');
       }

@@ -1,11 +1,13 @@
 <link rel="import" href="../elements.shared.html">
 <link rel="import" href="../contacts-list/contacts-list.html">
 
-<polymer-element name="contacts-page" extends="base-page" layout vertical>
+<polymer-element name="contacts-page" extends="base-page">
   <template>
     <link rel="stylesheet" href="contacts-page.css">
 
-    <contacts-list id="list" on-contacts-list-ready="{{loaded}}">
+    <contacts-list id="list"
+                   on-contacts-list-ready="{{loaded}}"
+                   fit layout vertical>
     </contacts-list>
     <a href="/#/add">
       <paper-fab icon="add"></paper-fab>

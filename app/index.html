@@ -22,16 +22,15 @@
 <body unresolved fullbleed layout vertical>
 
   <core-drawer-panel>
-    <core-header-panel drawer>
+    <!-- <core-header-panel drawer>
       <core-toolbar>Menu</core-toolbar>
-
-    </core-header-panel>
-    <core-header-panel main>
-      <core-toolbar>
+    </core-header-panel> -->
+    <core-scroll-header-panel condenses main>
+      <core-toolbar class="tall">
         <core-icon-button id="btn-menu" icon="menu"></core-icon-button>
-        <div>All Contacts</div>
+        <div class="title bottom indent">All Contacts</div>
       </core-toolbar>
-      <div fit>
+      <div content>
         <lazy-pages id="pages" fit>
 
           <contacts-page route="/"
@@ -48,7 +47,7 @@
 
         </lazy-pages>
       </div>
-    </core-header-panel>
+    </core-scroll-header-panel>
   </core-drawer-panel>
 
   <!-- build:js scripts/app.js -->
