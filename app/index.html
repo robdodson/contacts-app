@@ -19,40 +19,33 @@
   <!-- endbuild-->
 </head>
 
-<body unresolved fullbleed layout vertical>
+<body unresolved fullbleed>
 
-  <core-drawer-panel>
-    <!-- <core-header-panel drawer>
-      <core-toolbar>Menu</core-toolbar>
-    </core-header-panel> -->
-    <core-scroll-header-panel condenses main>
-      <core-toolbar class="tall">
-        <core-icon-button id="btn-menu" icon="menu"></core-icon-button>
-        <div class="title bottom indent">All Contacts</div>
-      </core-toolbar>
-      <div content>
-        <lazy-pages id="pages" fit>
+  <lazy-pages id="pages" transitions="cross-fade">
+    <section>
+      <contacts-page route="/"
+                     path="elements/contacts-page/contacts-page.html"
+                     cross-fade>
+      </contacts-page>
+    </section>
+    <section>
+      <info-page route="contacts/:id"
+                 path="elements/info-page/info-page.html"
+                 cross-fade>
+      </info-page>
+    </section>
 
-          <contacts-page route="/"
-                         path="elements/contacts-page/contacts-page.html"
-                         layout vertical>
-          </contacts-page>
+    <section>
+      <add-page route="add"
+                path="elements/add-page/add-page.html"
+                cross-fade>
+      </add-page>
+    </section>
 
-          <info-page route="contacts/:id"
-                     path="elements/info-page/info-page.html">
-          </info-page>
-
-          <add-page route="add"
-                    path="elements/add-page/add-page.html">
-          </add-page>
-
-        </lazy-pages>
-      </div>
-    </core-scroll-header-panel>
-  </core-drawer-panel>
+  </lazy-pages>
 
   <!-- build:js scripts/app.js -->
-  <script src="bower_components/Faker/build/build/faker.js"></script>
+  <!-- <script src="bower_components/Faker/build/build/faker.js"></script> -->
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
 </body>

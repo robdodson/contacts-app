@@ -1,6 +1,30 @@
 @import '../styles/base';
 @import '../styles/buttons';
 
+core-drawer-panel:not([narrow]) #btn-menu {
+  // display: none;
+}
+/* background for toolbar when it is at its full size */
+core-scroll-header-panel::shadow #headerBg {
+  background-image: url(https://www.polymer-project.org/components/core-scroll-header-panel/demos/images/bg9.jpg);
+}
+/* background for toolbar when it is condensed */
+core-scroll-header-panel::shadow #condensedHeaderBg {
+  background-color: #f4b400;
+}
+core-toolbar {
+  color: #F1F1F1;
+  background-color: transparent;
+}
+#title {
+  -webkit-transform-origin: 0;
+  transform-origin: 0;
+  font-size: 40px;
+}
+[content] {
+  position: relative;
+  height: 100%;
+}
 .row {
   padding: 18px 16px;
   border-bottom: 1px solid #E6E6E6;
