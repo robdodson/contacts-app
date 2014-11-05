@@ -9,7 +9,7 @@
     "core-list": "Polymer/core-list#1b0d8357a057dc22025142ff217dcf6cba32044b",
     "core-image": "Polymer/core-image#~0.4.2",
     "cache-polyfill": "coonsta/cache-polyfill",
-    "lazy-pages": "robdodson/lazy-pages"
+    "director": "~1.2.2"
   },
   "devDependencies": {
     "polymer-test-tools": "Polymer/polymer-test-tools#^0.4.0"

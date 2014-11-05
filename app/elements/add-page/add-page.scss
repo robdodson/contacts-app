@@ -1,2 +1,6 @@
 @import '../styles/base';
 @import '../styles/buttons';
+
+:host {
+  background-color: white;
+}

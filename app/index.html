@@ -19,33 +19,29 @@
   <!-- endbuild-->
 </head>
 
-<body unresolved fullbleed>
+<body unresolved fullbleed layout vertical>
+  <template is="auto-binding">
 
-  <lazy-pages id="pages" transitions="cross-fade">
-    <section>
-      <contacts-page route="/"
-                     path="elements/contacts-page/contacts-page.html"
-                     cross-fade>
-      </contacts-page>
-    </section>
-    <section>
-      <info-page route="contacts/:id"
-                 path="elements/info-page/info-page.html"
-                 cross-fade>
-      </info-page>
-    </section>
+    <core-animated-pages id="pages" selected="0" transitions="scale-up" flex>
 
-    <section>
-      <add-page route="add"
-                path="elements/add-page/add-page.html"
-                cross-fade>
-      </add-page>
-    </section>
+      <section layout vertical>
+        <contacts-page flex></contacts-page>
+      </section>
 
-  </lazy-pages>
+      <section layout vertical>
+        <info-page flex scale-up></info-page>
+      </section>
+
+      <section layout vertical>
+        <add-page flex scale-up></add-page>
+      </section>
+
+    </core-animated-pages>
+
+  </template>
 
   <!-- build:js scripts/app.js -->
-  <!-- <script src="bower_components/Faker/build/build/faker.js"></script> -->
+  <script src="bower_components/director/build/director.js"></script>
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
 </body>

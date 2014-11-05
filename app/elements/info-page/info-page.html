@@ -2,7 +2,7 @@
 <link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
 <link rel="import" href="../../bower_components/core-icons/communication-icons.html">
 
-<polymer-element name="info-page" extends="base-page">
+<polymer-element name="info-page">
   <template>
     <link rel="stylesheet" href="info-page.css">
 
@@ -88,11 +88,6 @@
   <script>
   (function() {
     Polymer({
-      showPage: function() {
-        this.async(function() {
-          this.fire('lazy-loaded');
-        }, null, 1000);
-      },
       domReady: function() {
         // custom transformation: scale header's title
         var titleStyle = this.$.title.style;

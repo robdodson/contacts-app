@@ -4,6 +4,9 @@
 *,*::after,*::before {
   box-sizing: border-box;
 }
+:host {
+  background-color: white;
+}
 .group {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 8px 0;

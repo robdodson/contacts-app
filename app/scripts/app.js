@@ -6,7 +6,28 @@
 // });
 
 // Select auto-binding template and use as the top level of our app
-var app = document.querySelector('#pages');
-document.addEventListener('polymer-ready', function() {
+document.addEventListener('template-bound', function() {
+
+  var pages = document.querySelector('#pages');
+
+  // Setup routing
+  var contacts = function() {
+    pages.selected = 0;
+  };
+  var info = function() {
+    pages.selected = 1;
+  };
+  var add = function() {
+    pages.selected = 2;
+  };
+
+  var routes = {
+    '/': contacts,
+    'contacts/:id': info,
+    'add': add
+  };
+
+  var router = Router(routes);
+  router.init('/');
 
 });

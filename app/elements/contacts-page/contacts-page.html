@@ -8,7 +8,7 @@
   - Alphabetical grouping
 -->
 
-<polymer-element name="contacts-page" extends="base-page">
+<polymer-element name="contacts-page">
   <template>
     <link rel="stylesheet" href="contacts-page.css">
 
@@ -56,11 +56,6 @@
   <script>
   (function() {
     Polymer({
-      showPage: function() {
-        this.async(function() {
-          this.fire('lazy-loaded');
-        }, null, 1000);
-      },
       domReady: function() {
         // custom transformation: scale header's title
         var titleStyle = this.$.title.style;
