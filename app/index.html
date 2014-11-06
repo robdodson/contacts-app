@@ -22,18 +22,29 @@
 <body unresolved fullbleed layout vertical>
   <template is="auto-binding">
 
-    <core-animated-pages id="pages" selected="0" transitions="scale-up" flex>
+    <core-ajax url="https://polymer-contacts.firebaseio.com/contacts.json"           response="{{contacts}}"
+               on-core-response="{{init}}"
+               auto></core-ajax>
+
+    <core-animated-pages id="pages" selected="{{selected}}"
+                         transitions="cross-fade scale-up" flex>
 
       <section layout vertical>
-        <contacts-page flex></contacts-page>
+        <contacts-page class="page" id="contacts" contacts="{{contacts}}" flex></contacts-page>
       </section>
 
       <section layout vertical>
-        <info-page flex scale-up></info-page>
+        <info-page class="page" id="info" contacts="{{contacts}}"
+                   scale-up?="{{selected === 1}}"
+                   cross-fade?="{{selected !== 1}}" flex>
+        </info-page>
       </section>
 
       <section layout vertical>
-        <add-page flex scale-up></add-page>
+        <add-page class="page" id="add"
+                  scale-up?="{{selected === 2}}"
+                  cross-fade?="{{selected !== 2}}" flex>
+        </add-page>
       </section>
 
     </core-animated-pages>

@@ -2,88 +2,71 @@
 <link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
 <link rel="import" href="../../bower_components/core-icons/communication-icons.html">
 
-<polymer-element name="info-page">
+<polymer-element name="info-page" attributes="contactId contacts">
   <template>
     <link rel="stylesheet" href="info-page.css">
 
-    <core-ajax url="https://polymer-contacts.firebaseio.com/contacts.json"           response="{{data}}"
-               on-core-response="{{showPage}}"
-               auto>
-    </core-ajax>
+    <core-scroll-header-panel id="scrollHeader" condenses fit>
+      <core-toolbar class="tall">
+        <a href="/">
+          <core-icon-button icon="arrow-back"></core-icon-button>
+        </a>
+        <div id="title" class="bottom indent">John Doe</div>
+      </core-toolbar>
+      <div content>
 
-    <core-drawer-panel id="drawerPanel">
-
-      <!-- Drawer -->
-      <core-header-panel drawer>
-        <core-toolbar>Menu</core-toolbar>
-      </core-header-panel>
-
-      <!-- Main -->
-      <core-scroll-header-panel id="scrollHeader" condenses main>
-        <core-toolbar class="tall">
-          <core-icon-button id="btnMenu" icon="menu"
-                            on-tap="{{$.drawerPanel.togglePanel}}">
-          </core-icon-button>
-          <div id="title" class="bottom indent">John Doe</div>
-        </core-toolbar>
-        <div content>
-          <!-- Phone -->
-          <div class="group">
-            <div class="item">
-              <core-icon icon="communication:phone"></core-icon>
-              <div class="double-line-1">(315) 546-0060</div>
-              <div class="double-line-2">Home</div>
-            </div>
-            <div class="item">
-              <div class="double-line-1">(675) 233-8464</div>
-              <div class="double-line-2">Work</div>
-            </div>
-            <div class="item">
-              <div class="double-line-1">(797) 158-2516</div>
-              <div class="double-line-2">Cell</div>
-            </div>
+        <!-- Phone -->
+        <div class="group">
+          <div class="item">
+            <core-icon icon="communication:phone"></core-icon>
+            <div class="double-line-1">(315) 546-0060</div>
+            <div class="double-line-2">Home</div>
           </div>
-
-          <!-- Email -->
-          <div class="group">
-            <div class="item">
-              <core-icon icon="mail"></core-icon>
-              <div class="double-line-1">(315) 546-0060</div>
-              <div class="double-line-2">Home</div>
-            </div>
-            <div class="item">
-              <div class="double-line-1">(675) 233-8464</div>
-              <div class="double-line-2">Work</div>
-            </div>
-            <div class="item">
-              <div class="double-line-1">(797) 158-2516</div>
-              <div class="double-line-2">Cell</div>
-            </div>
+          <div class="item">
+            <div class="double-line-1">(675) 233-8464</div>
+            <div class="double-line-2">Work</div>
           </div>
-
-          <!-- Location -->
-          <div class="group">
-            <div class="item">
-              <core-icon icon="room"></core-icon>
-              <div class="double-line-1">(315) 546-0060</div>
-              <div class="double-line-2">Home</div>
-            </div>
-            <div class="item">
-              <div class="double-line-1">(675) 233-8464</div>
-              <div class="double-line-2">Work</div>
-            </div>
-            <div class="item">
-              <div class="double-line-1">(797) 158-2516</div>
-              <div class="double-line-2">Cell</div>
-            </div>
+          <div class="item">
+            <div class="double-line-1">(797) 158-2516</div>
+            <div class="double-line-2">Cell</div>
           </div>
         </div>
-      </core-scroll-header-panel>
 
-      <a href="/#/add">
-        <paper-fab icon="add"></paper-fab>
-      </a>
-    </core-drawer-panel>
+        <!-- Email -->
+        <div class="group">
+          <div class="item">
+            <core-icon icon="mail"></core-icon>
+            <div class="double-line-1">(315) 546-0060</div>
+            <div class="double-line-2">Home</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">(675) 233-8464</div>
+            <div class="double-line-2">Work</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">(797) 158-2516</div>
+            <div class="double-line-2">Cell</div>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="group">
+          <div class="item">
+            <core-icon icon="room"></core-icon>
+            <div class="double-line-1">(315) 546-0060</div>
+            <div class="double-line-2">Home</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">(675) 233-8464</div>
+            <div class="double-line-2">Work</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">(797) 158-2516</div>
+            <div class="double-line-2">Cell</div>
+          </div>
+        </div>
+      </div>
+    </core-scroll-header-panel>
   </template>
   <script>
   (function() {
@@ -94,10 +77,17 @@
         document.addEventListener('core-header-transform', function(e) {
           var d = e.detail;
           var m = d.height - d.condensedHeight;
-          var scale = Math.max(0.55, (m - d.y) / (m / 0.25)  + 0.55);
+          var scale = Math.max(0.55, (m - d.y) / (m / 0.25) + 0.55);
           titleStyle.transform = titleStyle.webkitTransform =
-              'scale(' + scale + ') translateZ(0)';
+            'scale(' + scale + ') translateZ(0)';
         });
+      },
+      willPrepare: function() {
+        this.$.scrollHeader.measureHeaderHeight();
+      },
+      contactIdChanged: function(oldVal, newVal) {
+        this.$.scrollHeader.shadowRoot.querySelector('#headerBg')
+          .style['background-image'] = 'url('+this.contacts[newVal].avatar+')';
       }
     });
   })();

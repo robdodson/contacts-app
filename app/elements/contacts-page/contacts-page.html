@@ -1,5 +1,4 @@
 <link rel="import" href="../elements.shared.html">
-<link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
 <link rel="import" href="../../bower_components/core-list/core-list.html">
 <link rel="import" href="../../bower_components/core-image/core-image.html">
 
@@ -8,14 +7,9 @@
   - Alphabetical grouping
 -->
 
-<polymer-element name="contacts-page">
+<polymer-element name="contacts-page" attributes="contacts">
   <template>
     <link rel="stylesheet" href="contacts-page.css">
-
-    <core-ajax url="https://polymer-contacts.firebaseio.com/contacts.json"           response="{{data}}"
-               on-core-response="{{showPage}}"
-               auto>
-    </core-ajax>
 
     <core-drawer-panel id="drawerPanel">
 
@@ -25,32 +19,35 @@
       </core-header-panel>
 
       <!-- Main -->
-      <core-scroll-header-panel id="scrollHeader" condenses main>
-        <core-toolbar class="tall">
-          <core-icon-button id="btnMenu" icon="menu"
-                            on-tap="{{$.drawerPanel.togglePanel}}">
-          </core-icon-button>
-          <div id="title" class="bottom indent">All Contacts</div>
-        </core-toolbar>
-        <div content>
-          <core-list id="list" data="{{data}}"
-                               scrollTarget="{{$.scrollHeader.scroller}}">
-            <template>
-              <a href="/#/contacts/{{index}}">
-                <div class="row" layout horizontal center>
-                  <core-image src="{{model.avatar}}" preload sizing="cover">
-                  </core-image>
-                  <div flex>{{model.name}}</div>
-                </div>
-              </a>
-            </template>
-          </core-list>
-        </div>
-      </core-scroll-header-panel>
+      <div main>
+        <core-scroll-header-panel id="scrollHeader" condenses fit>
+          <core-toolbar class="tall">
+            <core-icon-button id="btnMenu" icon="menu"
+                              on-tap="{{$.drawerPanel.togglePanel}}">
+            </core-icon-button>
+            <div id="title" class="bottom indent">All Contacts</div>
+          </core-toolbar>
+          <div content>
+            <core-list id="list" data="{{contacts}}"
+                                 scrollTarget="{{$.scrollHeader.scroller}}">
+              <template>
+                <a href="/#/contacts/{{index}}">
+                  <div class="row" layout horizontal center>
+                    <core-image src="{{model.avatar}}" preload sizing="cover">
+                    </core-image>
+                    <div flex>{{model.name}}</div>
+                  </div>
+                </a>
+              </template>
+            </core-list>
+          </div>
+        </core-scroll-header-panel>
 
-      <a href="/#/add">
-        <paper-fab icon="add"></paper-fab>
-      </a>
+        <!-- Add contact -->
+        <a href="/#/add">
+          <paper-fab icon="add"></paper-fab>
+        </a>
+      </div>
     </core-drawer-panel>
   </template>
   <script>
@@ -66,6 +63,9 @@
           titleStyle.transform = titleStyle.webkitTransform =
               'scale(' + scale + ') translateZ(0)';
         });
+      },
+      willPrepare: function() {
+        this.$.scrollHeader.measureHeaderHeight();
       }
     });
   })();

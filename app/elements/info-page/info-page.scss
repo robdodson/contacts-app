@@ -7,6 +7,26 @@
 :host {
   background-color: white;
 }
+/* background for toolbar when it is at its full size */
+core-scroll-header-panel::shadow #headerBg {
+  // background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/zauerkraut/128.jpg');
+}
+/* background for toolbar when it is condensed */
+core-scroll-header-panel::shadow #condensedHeaderBg {
+  background-color: $primary-color;
+}
+core-toolbar {
+  color: #F1F1F1;
+  background-color: transparent;
+}
+core-toolbar a {
+  color: #F1F1F1;
+}
+#title {
+  -webkit-transform-origin: 0;
+  transform-origin: 0;
+  font-size: 40px;
+}
 .group {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 8px 0;

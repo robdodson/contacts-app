@@ -1,33 +1,32 @@
-<link rel="import"
-  href="../elements.shared.html">
+<link rel="import" href="../elements.shared.html">
 
 <polymer-element name="add-page" layout vertical>
   <template>
     <link rel="stylesheet" href="add-page.css">
 
-    <core-scaffold>
-      <!-- Drawer -->
-      <core-header-panel navigation flex mode="seamed">
-        <core-toolbar></core-toolbar>
-        <core-menu>
-          <core-item icon="settings" label="item1"></core-item>
-          <core-item icon="settings" label="item2"></core-item>
-        </core-menu>
-      </core-header-panel>
+    <core-scroll-header-panel id="scrollHeader" condenses fit>
+      <core-toolbar class="tall">
+        <a href="/">
+          <core-icon-button icon="arrow-back"></core-icon-button>
+        </a>
+        <div id="title" class="bottom indent">John Doe</div>
+      </core-toolbar>
+      <div content>
 
-      <!-- Main -->
-      <div tool>Add someone</div>
-      <div fit>
-        <h1>add</h1>
+        <div>add someone</div>
+
+        <a href="/#/add">
+          <paper-fab icon="add"></paper-fab>
+        </a>
       </div>
-    </core-scaffold>
+    </core-scroll-header-panel>
   </template>
   <script>
   (function() {
 
     Polymer({
-      ready: function() {
-
+      willPrepare: function() {
+        this.$.scrollHeader.measureHeaderHeight();
       }
     });
 

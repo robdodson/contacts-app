@@ -1,3 +1,8 @@
+@import 'colors';
+
 :host {
   display: block;
+}
+paper-fab {
+  background-color: $accent-color;
 }

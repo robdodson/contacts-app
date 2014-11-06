@@ -1,4 +1,5 @@
 @import '../styles/base';
+@import '../styles/colors';
 @import '../styles/buttons';
 
 core-drawer-panel:not([narrow]) #btn-menu {
@@ -10,7 +11,7 @@ core-scroll-header-panel::shadow #headerBg {
 }
 /* background for toolbar when it is condensed */
 core-scroll-header-panel::shadow #condensedHeaderBg {
-  background-color: #f4b400;
+  background-color: $primary-color;
 }
 core-toolbar {
   color: #F1F1F1;
@@ -24,6 +25,9 @@ core-toolbar {
 [content] {
   position: relative;
   height: 100%;
+}
+#list a {
+  color: #666666;
 }
 .row {
   padding: 18px 16px;
