@@ -5,3 +5,5 @@ test/temp
 app/bower_components
 .tmp
 test/bower_components/
+*.sublime-project
+*.sublime-workspace
