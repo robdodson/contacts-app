@@ -1,6 +1,8 @@
 <link rel="import" href="../elements.shared.html">
 <link rel="import" href="../../bower_components/core-list/core-list.html">
 <link rel="import" href="../../bower_components/core-image/core-image.html">
+<link rel="import" href="../../bower_components/core-menu/core-menu.html">
+<link rel="import" href="../../bower_components/core-item/core-item.html">
 
 <!--
   TODO:
@@ -16,6 +18,11 @@
       <!-- Drawer -->
       <core-header-panel drawer>
         <core-toolbar>Menu</core-toolbar>
+        <core-menu selected="0">
+          <core-item label="All Contacts"></core-item>
+          <core-item label="Favorites"></core-item>
+          <core-item label="Circles"></core-item>
+        </core-menu>
       </core-header-panel>
 
       <!-- Main -->
@@ -23,7 +30,7 @@
         <core-scroll-header-panel id="scrollHeader" fit>
           <core-toolbar>
             <paper-icon-button id="btnMenu" icon="menu"
-                              on-tap="{{$.drawerPanel.togglePanel}}">
+                              on-tap="{{toggleDrawer}}">
             </paper-icon-button>
             <div id="title" class="bottom indent">All Contacts</div>
           </core-toolbar>
@@ -53,6 +60,9 @@
   <script>
   (function() {
     Polymer({
+      toggleDrawer: function() {
+        this.$.drawerPanel.togglePanel();
+      },
       willPrepare: function() {
         this.$.scrollHeader.measureHeaderHeight();
       }
