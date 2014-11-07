@@ -9,18 +9,26 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-  <!-- build:css styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild-->
+  <!-- Conditionally load WC polyfills -->
+  <!-- Thanks to https://github.com/geelen/x-gif for the snippet -->
+  <script>
+    if ('registerElement' in document
+      && 'createShadowRoot' in HTMLElement.prototype
+      && 'import' in document.createElement('link')
+      && 'content' in document.createElement('template')) {
+      // We're using a browser with native WC support!
+    } else {
+      document.write('<script src="bower_components/platform/platform.js"><\/script>');
+    }
+  </script>
 
-  <script src="bower_components/platform/platform.js"></script>
   <!-- build:vulcanized elements/elements.critical.vulcanized.html -->
   <link rel="import" href="elements/elements.critical.html">
   <!-- endbuild-->
 </head>
 
 <body unresolved fullbleed layout vertical>
-  <template is="auto-binding">
+  <template id="app" is="auto-binding">
 
     <core-ajax url="https://polymer-contacts.firebaseio.com/contacts.json"           response="{{contacts}}"
                on-core-response="{{init}}"

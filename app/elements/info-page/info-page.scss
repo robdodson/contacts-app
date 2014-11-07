@@ -7,10 +7,6 @@
 :host {
   background-color: white;
 }
-/* background for toolbar when it is at its full size */
-core-scroll-header-panel::shadow #headerBg {
-  // background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/zauerkraut/128.jpg');
-}
 /* background for toolbar when it is condensed */
 core-scroll-header-panel::shadow #condensedHeaderBg {
   background-color: $primary-color;

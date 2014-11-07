@@ -1,5 +1,5 @@
 {
-  "name": "fowa-contacts",
+  "name": "contacts-app",
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
@@ -20,7 +20,7 @@
     "grunt-pagespeed": "~0.3.0",
     "grunt-rev": "~0.1.0",
     "grunt-open": "~0.2.3",
-    "grunt-vulcanize": "~0.3.0",
+    "grunt-vulcanize": "~0.5.0",
     "connect-livereload": "~0.4.0",
     "time-grunt": "~0.4.0",
     "load-grunt-tasks": "~0.6.0",

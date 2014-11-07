@@ -1,6 +1,65 @@
 @import '../styles/base';
 @import '../styles/buttons';
 
+*, *::after, *::before {
+  box-sizing: border-box;
+}
 :host {
   background-color: white;
+}
+core-toolbar {
+  color: $light-text;
+  background-color: $primary-color;
+}
+core-toolbar a {
+  color: $light-text;
+}
+#contactPhoto {
+  background-color: $dark-text-dividers;
+  height: 182px;
+}
+#iconEmptyContact {
+  width: 230px;
+  height: 230px;
+  margin-bottom: -37px;
+  color: $dark-text-disabled;
+}
+#contactForm {
+  position: relative;
+  padding-top: ($fab-size / 2) + $baseline; // 28px for half icon + 8px underneath icon
+}
+#contactForm paper-fab {
+  position: absolute;
+  top: -28px;
+  right: $padding-horizontal;
+}
+.item {
+  margin-left: $padding-horizontal;
+  color: $dark-text-secondary;
+}
+.item:last-child {
+  margin-right: $padding-horizontal;
+}
+.item-icon {
+  margin-top: $baseline;
+  width: 40px;
+}
+.item-input {
+  color: $dark-text-secondary;
+  border-color: $dark-text-secondary;
+}
+.item-input /deep/ .unfocused-underline {
+  /* line and cursor color when the input has focus */
+  background-color: $dark-text-secondary;
+}
+.item-input /deep/ .focused-underline,
+.item-input /deep/ .cursor {
+  /* line and cursor color when the input has focus */
+  background-color: $accent-color;
+}
+.item-menu {
+  width: 100px;
+}
+.item-menu /deep/ #control[selected] {
+  color: $dark-text-secondary;
 }

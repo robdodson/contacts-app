@@ -1,24 +1,99 @@
 <link rel="import" href="../elements.shared.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/core-icons/communication-icons.html">
+<link rel="import" href="../../bower_components/core-icons/social-icons.html">
+<link rel="import" href="../../bower_components/core-icons/image-icons.html">
 
 <polymer-element name="add-page" layout vertical>
   <template>
     <link rel="stylesheet" href="add-page.css">
 
-    <core-scroll-header-panel id="scrollHeader" condenses fit>
-      <core-toolbar class="tall">
-        <a href="/">
-          <core-icon-button icon="arrow-back"></core-icon-button>
+    <core-scroll-header-panel id="scrollHeader" fit>
+
+      <core-toolbar>
+        <a href="/#/">
+          <paper-icon-button icon="arrow-back"></paper-icon-button>
+        </a>
+        <span flex></span>
+        <a href="/#/">
+          <paper-icon-button icon="check"></paper-icon-button>
         </a>
         <div id="title" class="bottom indent">John Doe</div>
       </core-toolbar>
+
       <div content>
+        <!-- Contact photo area -->
+        <div id="contactPhoto" layout horizontal center-justified end>
+          <core-icon id="iconEmptyContact" icon="social:person"></core-icon>
+        </div>
 
-        <div>add someone</div>
+        <!-- Contact form -->
+        <div id="contactForm" style="position: relative;">
 
-        <a href="/#/add">
-          <paper-fab icon="add"></paper-fab>
-        </a>
+          <a href="/#/add">
+            <paper-fab icon="image:camera-alt"></paper-fab>
+          </a>
+
+          <!-- Name -->
+          <div class="formRow" layout horizontal center>
+            <div class="item item-icon">
+              <core-icon icon="social:person"></core-icon>
+            </div>
+            <paper-input class="item item-input" label="Name" flex></paper-input>
+          </div>
+
+          <!-- Phone -->
+          <div class="formRow" layout horizontal center>
+            <div class="item item-icon">
+              <core-icon icon="communication:phone"></core-icon>
+            </div>
+            <paper-input class="item item-input" label="Phone" flex>
+            </paper-input>
+            <paper-dropdown-menu class="item item-menu" selected="Mobile" valueattr="label">
+              <paper-item label="Mobile"></paper-item>
+              <paper-item label="Work"></paper-item>
+              <paper-item label="Home"></paper-item>
+            </paper-dropdown-menu>
+          </div>
+
+          <!-- Email -->
+          <div class="formRow" layout horizontal center>
+            <div class="item item-icon">
+              <core-icon icon="mail"></core-icon>
+            </div>
+            <paper-input class="item item-input" label="Email" flex></paper-input>
+            <paper-dropdown-menu class="item item-menu" selected="Work" valueattr="label">
+              <paper-item label="Work"></paper-item>
+              <paper-item label="Home"></paper-item>
+            </paper-dropdown-menu>
+          </div>
+
+          <!-- Address -->
+          <div class="formRow" layout horizontal center>
+            <div class="item item-icon">
+              <core-icon icon="room"></core-icon>
+            </div>
+            <paper-input class="item item-input" label="Address" flex></paper-input>
+            <paper-dropdown-menu class="item item-menu" selected="Home" valueattr="label">
+              <paper-item label="Work"></paper-item>
+              <paper-item label="Home"></paper-item>
+            </paper-dropdown-menu>
+          </div>
+
+          <!-- Add note -->
+          <div class="formRow" layout horizontal center>
+            <div class="item item-icon">
+              <core-icon icon="add"></core-icon>
+            </div>
+            <paper-input class="item item-input" label="Add note" multiline flex>
+            </paper-input>
+          </div>
+
+        </div>
       </div>
+
     </core-scroll-header-panel>
   </template>
   <script>

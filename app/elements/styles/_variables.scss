@@ -1,0 +1,37 @@
+// Color Palette
+// http://www.google.com/design/spec/style/color.html
+
+$primary-color: #3F51B5;
+$primary-color-lighter: #C5CAE9;
+$primary-color-darker: #303F9F;
+
+$accent-color: #FF4081;
+$accent-color-lighter: #FF80AB;
+$accent-color-darker: #F50057;
+
+$darkest-color: #000000;
+$dark-text: rgba($darkest-color, 0.87);
+$dark-text-secondary: rgba($darkest-color, 0.54);
+$dark-text-disabled: rgba($darkest-color, 0.26);
+$dark-text-dividers: rgba($darkest-color, 0.12);
+
+$lightest-color: #FFFFFF;
+$light-text: rgba($lightest-color, 1);
+$light-text-secondary: rgba($lightest-color, 0.7);
+$light-text-disabled: rgba($lightest-color, 0.3);
+$light-text-dividers: rgba($lightest-color, 0.12);
+
+
+// Metrics & keylines
+// http://www.google.com/design/spec/layout/metrics-keylines.html
+
+$baseline: 8px;
+$type-baseline: 4px;
+$icon-toolbar-baseline: 4px;
+
+$padding-horizontal: $baseline * 2;  // 16px
+$margin-horizontal: $padding-horizontal; // 16px
+
+$fab-size: 56px;  // Useful when you need to position the fab half over something
+
+
