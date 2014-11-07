@@ -8,3 +8,7 @@ body {
 html /deep/ a {
   text-decoration: none;
 }
+// Temp fix for https://github.com/Polymer/paper-button/issues/30
+html /deep/ paper-icon-button /deep/ core-icon {
+  display: block;
+}

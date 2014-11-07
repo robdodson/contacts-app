@@ -6,8 +6,3 @@
 paper-fab {
   background-color: $accent-color;
 }
-// Hack around funky vertical offset on
-// paper-icon-button
-core-toolbar paper-icon-button {
-  margin-top: -4px !important;
-}
