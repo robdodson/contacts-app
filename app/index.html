@@ -35,7 +35,7 @@
                auto></core-ajax>
 
     <core-animated-pages id="pages" selected="{{selected}}"
-                         transitions="cross-fade scale-up" flex>
+                         transitions="fade-scale" flex>
 
       <section layout vertical>
         <contacts-page class="page" id="contacts" contacts="{{contacts}}" flex></contacts-page>
@@ -43,15 +43,13 @@
 
       <section layout vertical>
         <info-page class="page" id="info" contacts="{{contacts}}"
-                   scale-up?="{{selected === 1}}"
-                   cross-fade?="{{selected !== 1}}" flex>
+                   fade-scale flex>
         </info-page>
       </section>
 
       <section layout vertical>
         <add-page class="page" id="add"
-                  scale-up?="{{selected === 2}}"
-                  cross-fade?="{{selected !== 2}}" flex>
+                  fade-scale flex>
         </add-page>
       </section>
 

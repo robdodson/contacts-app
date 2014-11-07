@@ -1,0 +1,36 @@
+<link href="../../bower_components/core-animated-pages/transitions/core-transition-pages.html" rel="import">
+
+<core-style id="fade-scale">
+  <!-- Setup transition -->
+  polyfill-next-selector { content: ':host > * [fade-scale]'; }
+  ::content > * /deep/ [fade-scale] {
+    -webkit-transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  <!-- Final state -->
+  polyfill-next-selector { content: ':host > .core-selected [fade-scale]'; }
+  ::content > .core-selected /deep/ [fade-scale] {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+
+  <!-- Initial state -->
+  polyfill-next-selector { content: ':host > [animate]:not(.core-selected) [fade-scale]:not([hero-p]):not([bg])'; }
+  ::content > [animate]:not(.core-selected) /deep/ [fade-scale]:not([hero-p]):not([bg]) {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+
+  <!-- Interim state -->
+  polyfill-next-selector { content: ':host > .core-selected[animate] [scale-up]'; }
+  ::content > .core-selected[animate] /deep/ [scale-up]  {
+    z-index: 1000;
+  }
+</core-style>
+
+<core-transition-pages id="fade-scale"></core-transition-pages>
