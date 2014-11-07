@@ -1,5 +1,9 @@
 # Contacts App
 
+[Live link](http://cds-polymer.appspot.com)
+
+Note: This app is currently only designed for mobile screens so you'll want to view it using mobile emulation in your browser or on a mobile device.
+
 ## Getting Started
 
 - git clone https://github.com/robdodson/contacts-app.git
