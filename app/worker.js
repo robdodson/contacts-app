@@ -12,7 +12,7 @@ self.addEventListener('install', function(event) {
         '/',
         '/styles/main.css',
         '/scripts/app.js',
-        '/elements/elements.html'
+        '/elements/elements.critical.vulcanized.html'
       ]);
     })
   )

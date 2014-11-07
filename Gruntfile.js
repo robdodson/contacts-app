@@ -199,17 +199,6 @@ module.exports = function (grunt) {
           '<%= yeoman.dist %>/elements/elements.critical.html'
           ]
         }
-      },
-      shared: {
-        options: {
-          strip: true,
-          config: '<%= yeoman.app %>/elements/vulcanize.shared.config.json'
-        },
-        files: {
-          '<%= yeoman.dist %>/elements/elements.shared.vulcanized.html': [
-          '<%= yeoman.dist %>/elements/elements.shared.html'
-          ]
-        }
       }
     },
     imagemin: {
@@ -250,7 +239,8 @@ module.exports = function (grunt) {
             'elements/**',
             '!elements/**/*.scss',
             'images/{,*/}*.{webp,gif}',
-            'bower_components/**'
+            'bower_components/**',
+            'worker.js'
           ]
         }]
       },
