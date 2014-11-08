@@ -38,7 +38,7 @@
                auto></core-ajax>
 
     <core-animated-pages id="pages" selected="{{selected}}"
-                         transitions="fade-scale" flex>
+                         transitions="fade-slide-up fade-scale" flex>
 
       <section layout vertical>
         <contacts-page class="page" id="contacts" contacts="{{contacts}}" flex></contacts-page>
@@ -52,7 +52,7 @@
 
       <section layout vertical>
         <add-page class="page" id="add"
-                  fade-scale flex>
+                  fade-slide-up flex>
         </add-page>
       </section>
 

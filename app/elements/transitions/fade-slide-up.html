@@ -1,0 +1,36 @@
+<link href="../../bower_components/core-animated-pages/transitions/core-transition-pages.html" rel="import">
+
+<core-style id="fade-slide-up">
+  <!-- Setup transition -->
+  polyfill-next-selector { content: ':host > * [fade-slide-up]'; }
+  ::content > * /deep/ [fade-slide-up] {
+    -webkit-transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  <!-- Final state -->
+  polyfill-next-selector { content: ':host > .core-selected [fade-slide-up]'; }
+  ::content > .core-selected /deep/ [fade-slide-up] {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+
+  <!-- Initial state -->
+  polyfill-next-selector { content: ':host > [animate]:not(.core-selected) [fade-slide-up]:not([hero-p]):not([bg])'; }
+  ::content > [animate]:not(.core-selected) /deep/ [fade-slide-up] {
+    opacity: 0;
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+
+  <!-- Interim state -->
+  polyfill-next-selector { content: ':host > .core-selected[animate] [fade-slide-up]'; }
+  ::content > .core-selected[animate] /deep/ [fade-slide-up]  {
+    z-index: 1000;
+  }
+</core-style>
+
+<core-transition-pages id="fade-slide-up"></core-transition-pages>
