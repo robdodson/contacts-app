@@ -9,6 +9,7 @@
   "immed": true,
   "indent": 2,
   "latedef": true,
+  "newcap": false,
   "noarg": true,
   "quotmark": "single",
   "regexp": true,
@@ -22,6 +23,7 @@
     "wrap": true,
     "unwrap": true,
     "Polymer": true,
-    "Platform": true
+    "Platform": true,
+    "Router": true
   }
 }
