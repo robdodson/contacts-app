@@ -16,3 +16,7 @@ Note: This app is currently only designed for mobile screens so you'll want to v
 - Scroll through a list of contacts
 - Click the add button to see a mock 'add contact' page
 - Click a contact to see more info
+
+## Add to homescreen
+
+For the best experience you should add the app to your homescreen. That will get rid of the URL bar at the top and give you much more vertical room to scroll around
