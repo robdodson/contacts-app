@@ -87,7 +87,8 @@
       },
       contactIdChanged: function(oldVal, newVal) {
         this.$.scrollHeader.shadowRoot.querySelector('#headerBg')
-          .style['background-image'] = 'url('+this.contacts[newVal].avatar+')';
+          .style['background'] = 'url(/images/header-shadow.png) repeat-x,'+
+                                 'url('+this.contacts[newVal].avatar+') 0 / cover no-repeat';
       }
     });
   })();
