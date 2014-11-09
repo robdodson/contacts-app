@@ -7,6 +7,15 @@
 :host {
   background-color: white;
 }
+/**
+ * background for toolbar when it is expanded
+ * put an inset box shadow overlay so the controls
+ * and contact name are visible on lighter photos
+ */
+core-scroll-header-panel::shadow #headerBg {
+  box-shadow: inset  0  60px 55px -15px rgba(0,0,0,0.3),
+              inset  0  -60px 55px -15px rgba(0,0,0,0.2)
+}
 /* background for toolbar when it is condensed */
 core-scroll-header-panel::shadow #condensedHeaderBg {
   background-color: $primary-color;
