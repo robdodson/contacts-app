@@ -12,7 +12,8 @@ self.addEventListener('install', function(event) {
         '/',
         '/styles/main.css',
         '/scripts/app.js',
-        '/elements/elements.critical.vulcanized.html'
+        '/elements/elements.critical.vulcanized.html',
+        'https://polymer-contacts.firebaseio.com/contacts.json'
       ]);
     })
   )
