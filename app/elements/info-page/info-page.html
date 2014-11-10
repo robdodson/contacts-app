@@ -2,11 +2,16 @@
 <link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
 <link rel="import" href="../../bower_components/core-icons/communication-icons.html">
 
-<polymer-element name="info-page" attributes="contactId contacts">
+<!--
+TODO:
+Use core-media-query to switch to a [cover] core-header-panel on desktop
+ -->
+
+<polymer-element name="info-page" attributes="contactId contacts" layout vertical>
   <template>
     <link rel="stylesheet" href="info-page.css">
 
-    <core-scroll-header-panel id="scrollHeader" condenses fit>
+    <core-scroll-header-panel id="scrollHeader" condenses flex>
       <core-toolbar class="tall">
         <a href="/#/">
           <paper-icon-button icon="arrow-back"></paper-icon-button>
@@ -85,10 +90,17 @@
       willPrepare: function() {
         this.$.scrollHeader.measureHeaderHeight();
       },
+      // Apply the contact's photo as a header background image.
+      // Use multiple backgrounds to create an inset box shadow look
+      // that doesn't cause scroll jank
       contactIdChanged: function(oldVal, newVal) {
+        // Unfortunately this approach also causes scroll jank :(
+        // Going with the regular background image until I can find a solution
+        // this.$.scrollHeader.shadowRoot.querySelector('#headerBg')
+        //   .style['background'] = 'url(/images/header-shadow.png) repeat-x,'+
+        //                          'url('+this.contacts[newVal].avatar+') 0 / cover no-repeat';
         this.$.scrollHeader.shadowRoot.querySelector('#headerBg')
-          .style['background'] = 'url(/images/header-shadow.png) repeat-x,'+
-                                 'url('+this.contacts[newVal].avatar+') 0 / cover no-repeat';
+          .style['background'] = 'url('+this.contacts[newVal].avatar+') 0 / cover no-repeat';
       }
     });
   })();

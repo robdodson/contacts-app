@@ -1,8 +1,15 @@
 @import '../styles/base';
 @import '../styles/buttons';
 
-core-drawer-panel:not([narrow]) #btn-menu {
-  // display: none;
+core-drawer-panel:not([narrow]) #btnMenu {
+  display: none;
+}
+// core-header-panel[mode="cover"]::shadow #mainContainer {
+//   left: 180px;
+// }
+.content {
+  // margin: 60px 180px 60px 0;
+  background-color: #FFFFFF;
 }
 core-toolbar {
   color: $light-text;
@@ -10,10 +17,6 @@ core-toolbar {
 }
 [drawer] {
   background-color: white;
-}
-[content] {
-  position: relative;
-  height: 100%;
 }
 #list a {
   color: #666666;

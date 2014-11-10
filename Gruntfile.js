@@ -192,7 +192,8 @@ module.exports = function (grunt) {
     vulcanize: {
       critical: {
         options: {
-          strip: true
+          strip: true,
+          inline: true
         },
         files: {
           '<%= yeoman.dist %>/elements/elements.critical.vulcanized.html': [

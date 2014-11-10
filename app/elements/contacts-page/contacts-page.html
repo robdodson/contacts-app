@@ -2,7 +2,8 @@
 <link rel="import" href="../../bower_components/core-list/core-list.html">
 <link rel="import" href="../../bower_components/core-image/core-image.html">
 <link rel="import" href="../../bower_components/core-menu/core-menu.html">
-<link rel="import" href="../../bower_components/core-item/core-item.html">
+<link rel="import" href="../../bower_components/paper-menu-button/paper-menu-button.html">
+
 
 <!--
   TODO:
@@ -19,22 +20,27 @@
       <core-scroll-header-panel drawer>
         <core-toolbar>Menu</core-toolbar>
         <core-menu selected="0" content>
-          <core-item label="All Contacts"></core-item>
-          <core-item label="Favorites"></core-item>
-          <core-item label="Circles"></core-item>
+          <paper-item label="All Contacts"></paper-item>
+          <paper-item label="Favorites"></paper-item>
+          <paper-item label="Circles"></paper-item>
         </core-menu>
       </core-scroll-header-panel>
 
       <!-- Main -->
-      <div main>
-        <core-scroll-header-panel id="scrollHeader" fit>
+      <div main layout vertical>
+        <core-header-panel id="scrollHeader" mode="seamed" flex>
           <core-toolbar>
             <paper-icon-button id="btnMenu" icon="menu"
                               on-tap="{{toggleDrawer}}">
             </paper-icon-button>
-            <div id="title" class="bottom indent">All Contacts</div>
+            <div id="title" flex>All Contacts</div>
+            <paper-menu-button icon="more-vert" halign="right">
+              <paper-item>Settings</paper-item>
+              <paper-item>Help</paper-item>
+              <paper-item>Feedback</paper-item>
+            </paper-menu-button>
           </core-toolbar>
-          <div content>
+          <div class="content">
             <core-list id="list" data="{{contacts}}"
                                  scrollTarget="{{$.scrollHeader.scroller}}">
               <template>
@@ -48,7 +54,7 @@
               </template>
             </core-list>
           </div>
-        </core-scroll-header-panel>
+        </core-header-panel>
 
         <!-- Add contact -->
         <a href="/#/add">
@@ -64,7 +70,8 @@
         this.$.drawerPanel.togglePanel();
       },
       willPrepare: function() {
-        this.$.scrollHeader.measureHeaderHeight();
+        // Only need this is we're using core-scroll-header-panel
+        // this.$.scrollHeader.measureHeaderHeight();
       }
     });
   })();

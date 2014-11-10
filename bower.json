@@ -4,10 +4,10 @@
   "dependencies": {
     "core-elements": "Polymer/core-elements#^0.4.0",
     "paper-elements": "Polymer/paper-elements#^0.4.0",
+    "core-list": "Polymer/core-list#master",
+    "core-image": "Polymer/core-image#master",
+    "paper-menu-button": "Polymer/paper-menu-button#^0.4.0",
     "polymer": "Polymer/polymer#^0.4.0",
-    "Faker": "~2.0.0",
-    "core-list": "Polymer/core-list#1b0d8357a057dc22025142ff217dcf6cba32044b",
-    "core-image": "Polymer/core-image#~0.4.2",
     "cache-polyfill": "coonsta/cache-polyfill",
     "director": "~1.2.2"
   },
@@ -15,8 +15,10 @@
     "polymer-test-tools": "Polymer/polymer-test-tools#^0.4.0"
   },
   "resolutions": {
+    "core-list": "master",
+    "polymer": "^0.4.0",
+    "core-selection": "^0.4.0",
     "core-component-page": "^0.4.0",
-    "platform": "^0.4.0",
-    "polymer": "^0.4.0"
+    "platform": "^0.4.0"
   }
 }
