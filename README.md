@@ -1,6 +1,6 @@
 # Contacts App
 
-[Live link](http://cds-polymer.appspot.com)
+[Live link](http://cds-polymer.appspot.com) (view on phone or with mobile emulation in Chrome)
 
 Note: This app is currently only designed for mobile screens so you'll want to view it using mobile emulation in your browser or on a mobile device.
 
