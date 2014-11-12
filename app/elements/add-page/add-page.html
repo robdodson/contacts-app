@@ -10,7 +10,7 @@
   <template>
     <link rel="stylesheet" href="add-page.css">
 
-    <core-header-panel id="headerPanel" fit>
+    <core-header-panel id="headerPanel" fit mode="seamed">
 
       <core-toolbar>
         <a href="/#/">
@@ -100,6 +100,9 @@
   (function() {
 
     Polymer({
+      publish: {
+        contacts: null
+      },
       willPrepare: function() {
         this.super();
 
