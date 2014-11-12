@@ -1,12 +1,5 @@
 @import '../styles/base';
-@import '../styles/buttons';
 
-*,*::after,*::before {
-  box-sizing: border-box;
-}
-:host {
-  background-color: white;
-}
 /* background for toolbar when it is condensed */
 core-scroll-header-panel::shadow #condensedHeaderBg {
   background-color: $primary-color;

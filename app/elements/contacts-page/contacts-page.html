@@ -1,4 +1,4 @@
-<link rel="import" href="../elements.shared.html">
+<link rel="import" href="../base-page/base-page.html">
 <link rel="import" href="../../bower_components/core-list/core-list.html">
 <link rel="import" href="../../bower_components/core-image/core-image.html">
 <link rel="import" href="../../bower_components/core-menu/core-menu.html">
@@ -11,9 +11,11 @@
   - Alphabetical grouping
 -->
 
-<polymer-element name="contacts-page" attributes="contacts">
+<polymer-element name="contacts-page" extends="base-page" attributes="contacts">
   <template>
     <link rel="stylesheet" href="contacts-page.css">
+
+    <shadow></shadow>
 
     <core-drawer-panel id="drawerPanel">
 
@@ -29,7 +31,7 @@
 
       <!-- Main -->
       <div main layout vertical>
-        <core-header-panel id="scrollHeader" mode="seamed" flex>
+        <core-header-panel id="headerPanel" mode="seamed" flex>
           <core-toolbar>
             <paper-icon-button id="btnMenu" icon="menu"
                               on-tap="{{toggleDrawer}}">
@@ -51,7 +53,7 @@
           <div class="content">
 
             <core-list id="list" data="{{contacts}}"
-                                 scrollTarget="{{$.scrollHeader.scroller}}">
+                                 scrollTarget="{{$.headerPanel.scroller}}">
               <template>
                 <a href="/#/contacts/{{index}}">
                   <div class="row" layout horizontal center>

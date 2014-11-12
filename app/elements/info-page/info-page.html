@@ -1,4 +1,4 @@
-<link rel="import" href="../elements.shared.html">
+<link rel="import" href="../base-page/base-page.html">
 <link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
 <link rel="import" href="../../bower_components/core-icons/communication-icons.html">
 
@@ -7,7 +7,7 @@ TODO:
 Use core-media-query to switch to a [cover] core-header-panel on desktop
  -->
 
-<polymer-element name="info-page" attributes="contactId contacts" layout vertical>
+<polymer-element name="info-page" extends="base-page" attributes="contactId contacts" layout vertical>
   <template>
     <link rel="stylesheet" href="info-page.css">
 
@@ -88,17 +88,17 @@ Use core-media-query to switch to a [cover] core-header-panel on desktop
         });
       },
       willPrepare: function() {
+        // Make sure the core-scroll-header-panel has the right dimensions
+        // This is required because core-animated-pages makes it display: none
         this.$.scrollHeader.measureHeaderHeight();
+
+        // Reset the scroller so everytime the user comes to the info page
+        // they see the full profile photo
+        this.$.scrollHeader.scroller.scrollTop = 0;
       },
-      // Apply the contact's photo as a header background image.
-      // Use multiple backgrounds to create an inset box shadow look
-      // that doesn't cause scroll jank
       contactIdChanged: function(oldVal, newVal) {
-        // Unfortunately this approach also causes scroll jank :(
-        // Going with the regular background image until I can find a solution
-        // this.$.scrollHeader.shadowRoot.querySelector('#headerBg')
-        //   .style['background'] = 'url(/images/header-shadow.png) repeat-x,'+
-        //                          'url('+this.contacts[newVal].avatar+') 0 / cover no-repeat';
+        // Update the core-scroll-header-panel's background image with the
+        // user's avatar
         this.$.scrollHeader.$.headerBg.style.background = 'url('+this.contacts[newVal].avatar+') 0 / cover no-repeat';
       }
     });

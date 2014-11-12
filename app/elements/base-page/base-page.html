@@ -1,0 +1,20 @@
+<link rel="import" href="../elements.shared.html">
+
+<polymer-element name="base-page" attributes="">
+  <script>
+    (function () {
+
+      Polymer({
+        willPrepare: function() {
+          // called by sublcasses during core-animated-pages transitions
+          // core-animated-pages initially sets a page to display: none; which
+          // makes it impossible to work with height in JavaScript.
+          // `willPrepare` is called when the core-animated-pages begins its
+          // 'core-animated-pages-transition-prepare' event. At this point
+          // the element is no longer display: none;
+        }
+      });
+
+    })();
+  </script>
+</polymer-element>

@@ -1,4 +1,4 @@
-<link rel="import" href="../elements.shared.html">
+<link rel="import" href="../base-page/base-page.html">
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
 <link rel="import" href="../../bower_components/paper-item/paper-item.html">
@@ -6,11 +6,11 @@
 <link rel="import" href="../../bower_components/core-icons/social-icons.html">
 <link rel="import" href="../../bower_components/core-icons/image-icons.html">
 
-<polymer-element name="add-page" layout vertical>
+<polymer-element name="add-page" extends="base-page" layout vertical>
   <template>
     <link rel="stylesheet" href="add-page.css">
 
-    <core-scroll-header-panel id="scrollHeader" fit>
+    <core-header-panel id="headerPanel" fit>
 
       <core-toolbar>
         <a href="/#/">
@@ -94,14 +94,14 @@
         </div>
       </div>
 
-    </core-scroll-header-panel>
+    </core-header-panel>
   </template>
   <script>
   (function() {
 
     Polymer({
       willPrepare: function() {
-        this.$.scrollHeader.measureHeaderHeight();
+        this.$.headerPanel.measureHeaderHeight();
       }
     });
 

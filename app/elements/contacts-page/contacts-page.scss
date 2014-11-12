@@ -1,5 +1,4 @@
 @import '../styles/base';
-@import '../styles/buttons';
 
 core-drawer-panel:not([narrow]) #btnMenu {
   display: none;
@@ -38,4 +37,9 @@ paper-menu-button paper-item {
 }
 .row div {
   margin-left: 28px;
+}
+paper-fab {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
 }

@@ -1,7 +1,11 @@
 @import 'variables';
 
+*,*::after,*::before {
+  box-sizing: border-box;
+}
 :host {
   display: block;
+  background-color: white;
 }
 paper-fab {
   background-color: $accent-color;
