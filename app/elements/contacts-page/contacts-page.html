@@ -3,6 +3,7 @@
 <link rel="import" href="../../bower_components/core-image/core-image.html">
 <link rel="import" href="../../bower_components/core-menu/core-menu.html">
 <link rel="import" href="../../bower_components/paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../../bower_components/paper-dropdown/paper-dropdown.html">
 
 
 <!--
@@ -34,13 +35,21 @@
                               on-tap="{{toggleDrawer}}">
             </paper-icon-button>
             <div id="title" flex>All Contacts</div>
-            <paper-menu-button icon="more-vert" halign="right">
-              <paper-item>Settings</paper-item>
-              <paper-item>Help</paper-item>
-              <paper-item>Feedback</paper-item>
+
+            <paper-menu-button>
+              <paper-icon-button icon="more-vert" noink></paper-icon-button>
+              <paper-dropdown class="dropdown" halign="right">
+                <core-menu class="menu">
+                  <paper-item>Settings</paper-item>
+                  <paper-item>Help</paper-item>
+                  <paper-item>Feedback</paper-item>
+                </core-menu>
+              </paper-dropdown>
             </paper-menu-button>
+
           </core-toolbar>
           <div class="content">
+
             <core-list id="list" data="{{contacts}}"
                                  scrollTarget="{{$.scrollHeader.scroller}}">
               <template>
@@ -53,12 +62,13 @@
                 </a>
               </template>
             </core-list>
+
           </div>
         </core-header-panel>
 
         <!-- Add contact -->
         <a href="/#/add">
-          <paper-fab icon="add"></paper-fab>
+          <paper-fab icon="add" noink></paper-fab>
         </a>
       </div>
     </core-drawer-panel>

@@ -15,6 +15,9 @@ core-toolbar {
   color: $light-text;
   background-color: $primary-color;
 }
+paper-menu-button paper-item {
+  color: $dark-text;
+}
 [drawer] {
   background-color: white;
 }

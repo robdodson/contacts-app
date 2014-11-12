@@ -35,7 +35,7 @@
       && 'content' in document.createElement('template')) {
       // We're using a browser with native WC support!
     } else {
-      document.write('<script src="bower_components/platform/platform.js"><\/script>');
+      document.write('<script src="bower_components/webcomponents/webcomponents.js"><\/script>');
     }
   </script>
 
@@ -52,7 +52,7 @@
                auto></core-ajax>
 
     <core-animated-pages id="pages" selected="{{selected}}"
-                         transitions="fade-slide-up fade-scale" flex>
+                         transitions="fade-scale" flex>
 
       <section layout vertical>
         <contacts-page class="page" id="contacts" contacts="{{contacts}}" flex></contacts-page>
