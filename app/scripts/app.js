@@ -1,9 +1,6 @@
 (function(window, document, undefined) {
   'use strict';
 
-  // Set duration for core-animated-pages transitions
-  CoreStyle.g.transitions.duration = '0.2s';
-
   // Install Service Worker
   if (navigator.serviceWorker) {
     navigator.serviceWorker.register('/worker.js').then(function(reg) {
@@ -52,6 +49,9 @@
     pages.addEventListener('core-animated-pages-transition-prepare', function() {
       pages.selectedItem.querySelector('.page').willPrepare();
     });
+
+    // Set duration for core-animated-pages transitions
+    CoreStyle.g.transitions.duration = '0.2s';
 
   });
 
