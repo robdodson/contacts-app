@@ -35,9 +35,11 @@
       && 'content' in document.createElement('template')) {
       // We're using a browser with native WC support!
     } else {
-      document.write('<script src="bower_components/webcomponents/webcomponents.js"><\/script>');
+      document.write('<script src="bower_components/platform/platform.js"><\/script>');
     }
   </script>
+
+  <link rel="stylesheet" href="styles/main.css">
 
   <!-- build:vulcanized elements/elements.critical.vulcanized.html -->
   <link rel="import" href="elements/elements.critical.html">
@@ -52,7 +54,7 @@
                auto></core-ajax>
 
     <core-animated-pages id="pages" selected="{{selected}}"
-                         transitions="fade-scale" flex>
+                         transitions="cross-fade" flex>
 
       <section layout vertical>
         <contacts-page class="page" id="contacts" contacts="{{contacts}}" flex></contacts-page>
@@ -60,13 +62,13 @@
 
       <section layout vertical>
         <info-page class="page" id="info" contacts="{{contacts}}"
-                   fade-scale flex>
+                   cross-fade flex>
         </info-page>
       </section>
 
       <section layout vertical>
         <add-page class="page" id="add"
-                  fade-scale flex>
+                  cross-fade flex>
         </add-page>
       </section>
 

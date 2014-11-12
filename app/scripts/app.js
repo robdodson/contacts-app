@@ -1,6 +1,9 @@
 (function(window, document, undefined) {
-
   'use strict';
+
+  // Set duration for core-animated-pages transitions
+  CoreStyle.g.transitions.duration = '0.2s';
+
   // Install Service Worker
   if (navigator.serviceWorker) {
     navigator.serviceWorker.register('/worker.js').then(function(reg) {
@@ -14,17 +17,17 @@
   var app = document.querySelector('#app');
   app.addEventListener('template-bound', function() {
     var pages = document.querySelector('#pages');
+    var contactPage = document.querySelector('contact-page');
+    var infoPage = document.querySelector('info-page');
+    var addPage = document.querySelector('add-page');
 
     // Setup routing
     var contacts = function() {
       pages.selected = 0;
     };
     var info = function(contactId) {
+      infoPage.contactId = contactId;
       pages.selected = 1;
-      // hacky async workaround for when the properties change
-      setTimeout(function() {
-        pages.selectedItem.querySelector('.page').contactId = contactId;
-      }, 0);
     };
     var add = function() {
       pages.selected = 2;

@@ -99,8 +99,7 @@ Use core-media-query to switch to a [cover] core-header-panel on desktop
         // this.$.scrollHeader.shadowRoot.querySelector('#headerBg')
         //   .style['background'] = 'url(/images/header-shadow.png) repeat-x,'+
         //                          'url('+this.contacts[newVal].avatar+') 0 / cover no-repeat';
-        this.$.scrollHeader.shadowRoot.querySelector('#headerBg')
-          .style['background'] = 'url('+this.contacts[newVal].avatar+') 0 / cover no-repeat';
+        this.$.scrollHeader.$.headerBg.style.background = 'url('+this.contacts[newVal].avatar+') 0 / cover no-repeat';
       }
     });
   })();

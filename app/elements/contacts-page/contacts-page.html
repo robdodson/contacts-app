@@ -2,8 +2,8 @@
 <link rel="import" href="../../bower_components/core-list/core-list.html">
 <link rel="import" href="../../bower_components/core-image/core-image.html">
 <link rel="import" href="../../bower_components/core-menu/core-menu.html">
-<link rel="import" href="../../bower_components/paper-menu-button/paper-menu-button.html">
-<link rel="import" href="../../bower_components/paper-dropdown/paper-dropdown.html">
+<!-- <link rel="import" href="../../bower_components/paper-menu-button/paper-menu-button.html"> -->
+<!-- <link rel="import" href="../../bower_components/paper-dropdown/paper-dropdown.html"> -->
 
 
 <!--
@@ -36,7 +36,7 @@
             </paper-icon-button>
             <div id="title" flex>All Contacts</div>
 
-            <paper-menu-button noink>
+            <!-- <paper-menu-button noink>
               <paper-icon-button icon="more-vert" noink></paper-icon-button>
               <paper-dropdown class="dropdown" halign="right">
                 <core-menu class="menu">
@@ -45,7 +45,7 @@
                   <paper-item>Feedback</paper-item>
                 </core-menu>
               </paper-dropdown>
-            </paper-menu-button>
+            </paper-menu-button> -->
 
           </core-toolbar>
           <div class="content">
@@ -80,7 +80,7 @@
         this.$.drawerPanel.togglePanel();
       },
       willPrepare: function() {
-        // this.$.list.updateSize()
+        this.$.list.updateSize()
       }
     });
   })();
