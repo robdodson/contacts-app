@@ -36,7 +36,7 @@
             </paper-icon-button>
             <div id="title" flex>All Contacts</div>
 
-            <paper-menu-button>
+            <paper-menu-button noink>
               <paper-icon-button icon="more-vert" noink></paper-icon-button>
               <paper-dropdown class="dropdown" halign="right">
                 <core-menu class="menu">
@@ -80,8 +80,7 @@
         this.$.drawerPanel.togglePanel();
       },
       willPrepare: function() {
-        // Only need this is we're using core-scroll-header-panel
-        // this.$.scrollHeader.measureHeaderHeight();
+        // this.$.list.updateSize()
       }
     });
   })();
