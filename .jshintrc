@@ -24,6 +24,7 @@
     "unwrap": true,
     "Polymer": true,
     "Platform": true,
-    "Router": true
+    "Router": true,
+    "CoreStyle": true
   }
 }

@@ -17,19 +17,25 @@
   var app = document.querySelector('#app');
   app.addEventListener('template-bound', function() {
     var pages = document.querySelector('#pages');
-    var contactPage = document.querySelector('contact-page');
     var infoPage = document.querySelector('info-page');
-    var addPage = document.querySelector('add-page');
 
     // Setup routing
     var contacts = function() {
       pages.selected = 0;
     };
+
     var info = function(contactId) {
+      if (!app.contacts) {
+        return router.setRoute('/');
+      }
       infoPage.contactId = contactId;
       pages.selected = 1;
     };
+
     var add = function() {
+      if (!app.contacts) {
+        return router.setRoute('/');
+      }
       pages.selected = 2;
     };
 
