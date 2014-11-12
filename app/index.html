@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Polymer Contacts</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
 
   <!-- Add to homescreen meta -->
 
@@ -45,7 +45,7 @@
   <!-- endbuild-->
 </head>
 
-<body unresolved fullbleed layout vertical>
+<body unresolved>
   <template id="app" is="auto-binding">
 
     <core-ajax url="https://polymer-contacts.firebaseio.com/contacts.json"           response="{{contacts}}"
@@ -53,7 +53,7 @@
                auto></core-ajax>
 
     <core-animated-pages id="pages" selected="{{selected}}"
-                         transitions="cross-fade" flex>
+                         transitions="cross-fade" fit>
 
       <section layout vertical>
         <contacts-page class="page" id="contacts" contacts="{{contacts}}" flex></contacts-page>
