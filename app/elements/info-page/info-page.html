@@ -11,7 +11,7 @@ Use core-media-query to switch to a [cover] core-header-panel on desktop
   <template>
     <link rel="stylesheet" href="info-page.css">
 
-    <core-scroll-header-panel id="scrollHeader" condenses flex>
+    <core-scroll-header-panel id="scrollHeaderPanel" condenses flex>
       <core-toolbar class="tall">
         <a href="/#/">
           <paper-icon-button icon="arrow-back"></paper-icon-button>
@@ -88,18 +88,20 @@ Use core-media-query to switch to a [cover] core-header-panel on desktop
         });
       },
       willPrepare: function() {
-        // Make sure the core-scroll-header-panel has the right dimensions
-        // This is required because core-animated-pages makes it display: none
-        this.$.scrollHeader.measureHeaderHeight();
+        this.super();
 
-        // Reset the scroller so everytime the user comes to the info page
-        // they see the full profile photo
-        this.$.scrollHeader.scroller.scrollTop = 0;
+        // Measure the core-scroll-header-panel, otherwise its height will
+        // be messed up
+        this.$.scrollHeaderPanel.measureHeaderHeight();
+
+        // Reset the scroller so every time the user comes to the info page
+        // so they see the full profile photo
+        this.$.scrollHeaderPanel.scroller.scrollTop = 0;
       },
       contactIdChanged: function(oldVal, newVal) {
         // Update the core-scroll-header-panel's background image with the
         // user's avatar
-        this.$.scrollHeader.$.headerBg.style.background = 'url('+this.contacts[newVal].avatar+') 0 / cover no-repeat';
+        this.$.scrollHeaderPanel.$.headerBg.style.background = 'url('+this.contacts[newVal].avatar+') 0 / cover no-repeat';
       }
     });
   })();

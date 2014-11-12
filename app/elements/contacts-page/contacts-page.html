@@ -15,8 +15,6 @@
   <template>
     <link rel="stylesheet" href="contacts-page.css">
 
-    <shadow></shadow>
-
     <core-drawer-panel id="drawerPanel">
 
       <!-- Drawer -->
@@ -79,9 +77,11 @@
   (function() {
     Polymer({
       toggleDrawer: function() {
+        // replace with core-drawer-toggle attr when 0.5.0 lands
         this.$.drawerPanel.togglePanel();
       },
       willPrepare: function() {
+        this.super();
         this.$.list.updateSize()
       }
     });
