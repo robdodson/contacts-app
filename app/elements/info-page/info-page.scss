@@ -1,5 +1,8 @@
 @import '../styles/base';
 
+[content] {
+  background-color: #FFFFFF;
+}
 /* background for toolbar when it is condensed */
 core-scroll-header-panel::shadow #condensedHeaderBg {
   background-color: $primary-color;
@@ -45,4 +48,23 @@ core-toolbar paper-icon-button {
   font-size: 13px;
   line-height: 13px;
   color: rgba(0, 0, 0, 0.4);
+}
+@media screen and (min-width: 640px) {
+  :host {
+    background-color: transparent;
+  }
+  [content] {
+    margin: 64px 256px;
+  }
+  core-toolbar {
+    color: #F1F1F1;
+    background-color: $primary-color;
+  }
+  #title {
+    font-size: 1.3em;
+  }
+  // paper-fab {
+  //   top: 264px;
+  //   right: 64px;
+  // }
 }

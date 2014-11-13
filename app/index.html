@@ -38,8 +38,6 @@
     }
   </script>
 
-  <link rel="stylesheet" href="styles/main.css">
-
   <!-- build:vulcanized elements/elements.critical.vulcanized.html -->
   <link rel="import" href="elements/elements.critical.html">
   <!-- endbuild-->
@@ -52,22 +50,33 @@
                on-core-response="{{init}}"
                auto></core-ajax>
 
+    <core-media-query query="min-width: 640px" queryMatches="{{largeScreen}}">
+    </core-media-query>
+
+    <!-- TODO: Hero transition for desktop -->
     <core-animated-pages id="pages" selected="{{selected}}"
-                         transitions="cross-fade" fit>
+                         transitions="cross-fade fade-scale" fit>
 
       <section layout vertical>
-        <contacts-page class="page" id="contacts" contacts="{{contacts}}" flex></contacts-page>
+        <contacts-page class="page" id="contacts" contacts="{{contacts}}"
+                       cross-fade?="{{largeScreen}}"
+                       flex>
+        </contacts-page>
       </section>
 
       <section layout vertical>
         <info-page class="page" id="info" contacts="{{contacts}}"
-                   cross-fade flex>
+                   cross-fade?="{{largeScreen}}"
+                   fade-scale?="{{!largeScreen}}"
+                   flex>
         </info-page>
       </section>
 
       <section layout vertical>
         <add-page class="page" id="add" contacts="{{contacts}}"
-                  cross-fade flex>
+                  cross-fade?="{{largeScreen}}"
+                  fade-scale?="{{!largeScreen}}"
+                  flex>
         </add-page>
       </section>
 

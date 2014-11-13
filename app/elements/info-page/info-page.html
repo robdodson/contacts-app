@@ -2,17 +2,23 @@
 <link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
 <link rel="import" href="../../bower_components/core-icons/communication-icons.html">
 
-<!--
-TODO:
-Use core-media-query to switch to a [cover] core-header-panel on desktop
- -->
-
 <polymer-element name="info-page" extends="base-page" attributes="contactId contacts" layout vertical>
   <template>
     <link rel="stylesheet" href="info-page.css">
 
-    <core-scroll-header-panel id="scrollHeaderPanel" condenses flex>
-      <core-toolbar class="tall">
+    <!--
+    On larger screens, change the behavior of the header panel so it doesn't
+    scroll away or do the condenses feature. Instead, treat its content like
+    a regular toolbar.
+    -->
+    <core-media-query query="min-width: 640px" queryMatches="{{largeScreen}}">
+    </core-media-query>
+
+    <core-scroll-header-panel id="scrollHeaderPanel"
+                              condenses?="{{!largeScreen}}"
+                              fixed?="{{largeScreen}}"
+                              flex>
+      <core-toolbar class="{{ {tall: !largeScreen} | tokenList}}">
         <a href="/#/">
           <paper-icon-button icon="arrow-back"></paper-icon-button>
         </a>
@@ -100,7 +106,9 @@ Use core-media-query to switch to a [cover] core-header-panel on desktop
       },
       contactIdChanged: function(oldVal, newVal) {
         // Update the core-scroll-header-panel's background image with the
-        // user's avatar
+        // user's avatar if we're on a small screen
+        if (this.largeScreen) return;
+
         this.$.scrollHeaderPanel.$.headerBg.style.background = 'url('+this.contacts[newVal].avatar+') 0 / cover no-repeat';
       }
     });

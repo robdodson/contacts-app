@@ -40,6 +40,18 @@ paper-menu-button paper-item {
 }
 paper-fab {
   position: fixed;
-  bottom: 18px;
-  right: 18px;
+  bottom: 16px;
+  right: 16px;
+}
+@media screen and (min-width: 640px) {
+  :host {
+    background-color: transparent;
+  }
+  .content {
+    margin: 64px 256px;
+  }
+  // paper-fab {
+  //   top: 264px;
+  //   right: 64px;
+  // }
 }

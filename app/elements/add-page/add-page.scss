@@ -7,6 +7,9 @@ core-toolbar {
 core-toolbar a {
   color: $light-text;
 }
+.content {
+  background-color: #FFFFFF;
+}
 #contactPhoto {
   background-color: $dark-text-dividers;
   height: 182px;
@@ -55,4 +58,13 @@ core-toolbar a {
 }
 .item-menu /deep/ #control[selected] {
   color: $dark-text-secondary;
+}
+@media screen and (min-width: 640px) {
+  :host {
+    background-color: transparent;
+  }
+  .content {
+    margin: 64px 448px;
+    padding: 32px;
+  }
 }
