@@ -2,8 +2,8 @@
 <link rel="import" href="../../bower_components/core-list/core-list.html">
 <link rel="import" href="../../bower_components/core-image/core-image.html">
 <link rel="import" href="../../bower_components/core-menu/core-menu.html">
-<!-- <link rel="import" href="../../bower_components/paper-menu-button/paper-menu-button.html"> -->
-<!-- <link rel="import" href="../../bower_components/paper-dropdown/paper-dropdown.html"> -->
+<link rel="import" href="../../bower_components/paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../../bower_components/paper-dropdown/paper-dropdown.html">
 
 <polymer-element name="contacts-page" extends="base-page"
                  attributes="contacts heading">
@@ -42,7 +42,7 @@
             </paper-icon-button>
             <div id="title" flex>{{heading}}</div>
 
-            <!-- <paper-menu-button noink>
+            <paper-menu-button noink>
               <paper-icon-button icon="more-vert" noink></paper-icon-button>
               <paper-dropdown class="dropdown" halign="right">
                 <core-menu class="menu">
@@ -51,7 +51,7 @@
                   <paper-item>Feedback</paper-item>
                 </core-menu>
               </paper-dropdown>
-            </paper-menu-button> -->
+            </paper-menu-button>
 
           </core-toolbar>
           <div class="content">
@@ -90,6 +90,9 @@
         return window.location.pathname + '/' + idx;
       },
       closeDrawer: function() {
+        // Maybe this could wait till the next frame before animating
+        // out... right now it animates while the list is rebuilding
+        // and causes some jank
         this.$.drawerPanel.closeDrawer();
       }
     });

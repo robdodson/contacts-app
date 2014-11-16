@@ -22,7 +22,7 @@
     var contacts = function(category) {
       app.category = category;
       app.heading = category.charAt(0).toUpperCase() + category.slice(1);
-      if (app.heading == 'All') {
+      if (app.heading === 'All') {
         app.heading = 'All Contacts';
       }
       pages.selected = 0;
@@ -62,7 +62,7 @@
     });
     // Similar to change-route, listen for when a page wants to go
     // back to the previous state and change the route for them
-    document.addEventListener('change-route-back', function(e) {
+    document.addEventListener('change-route-back', function() {
       history.back();
     });
 
