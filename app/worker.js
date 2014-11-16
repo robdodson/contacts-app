@@ -7,12 +7,12 @@ console.log('SW startup');
 self.addEventListener('install', function(event) {
   // pre cache a load of stuff:
   event.waitUntil(
-    cachesPolyfill.open('myapp-static-v1').then(function(cache) {
+    caches.open('myapp-static-v1').then(function(cache) {
       return cache.addAll([
         '/',
         '/styles/main.css',
         '/scripts/app.js',
-        '/elements/elements.critical.vulcanized.html',
+        '/elements/elements.critical.html',
         'https://polymer-contacts.firebaseio.com/contacts.json'
       ]);
     })
@@ -30,7 +30,7 @@ self.addEventListener('fetch', function(event) {
     event.respondWith(s3Response(event.request));
   } else {
     event.respondWith(
-      cachesPolyfill.match(event.request).then(function(response) {
+      caches.match(event.request).then(function(response) {
         return response || fetch(event.request);
       })
     );
@@ -38,13 +38,13 @@ self.addEventListener('fetch', function(event) {
 });
 
 function s3Response(request) {
-  return cachesPolyfill.match(request).then(function(response) {
+  return caches.match(request).then(function(response) {
     if (response) {
       return response;
     }
 
     return fetch(request).then(function(response) {
-      cachesPolyfill.open('s3-imgs').then(function(cache) {
+      caches.open('s3-imgs').then(function(cache) {
         cache.put(request, response).then(function() {
           console.log('yey img cache');
         }, function() {
