@@ -21,6 +21,10 @@
 
     var contacts = function(category) {
       app.category = category;
+      app.heading = category.charAt(0).toUpperCase() + category.slice(1);
+      if (app.heading == 'All') {
+        app.heading = 'All Contacts';
+      }
       pages.selected = 0;
     };
 

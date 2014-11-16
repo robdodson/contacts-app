@@ -5,7 +5,8 @@
 <!-- <link rel="import" href="../../bower_components/paper-menu-button/paper-menu-button.html"> -->
 <!-- <link rel="import" href="../../bower_components/paper-dropdown/paper-dropdown.html"> -->
 
-<polymer-element name="contacts-page" extends="base-page" attributes="contacts">
+<polymer-element name="contacts-page" extends="base-page"
+                 attributes="contacts heading">
   <template>
     <link rel="stylesheet" href="contacts-page.css">
 
@@ -39,7 +40,7 @@
           <core-toolbar>
             <paper-icon-button icon="menu" core-drawer-toggle>
             </paper-icon-button>
-            <div id="title" flex>All Contacts</div>
+            <div id="title" flex>{{heading}}</div>
 
             <!-- <paper-menu-button noink>
               <paper-icon-button icon="more-vert" noink></paper-icon-button>
