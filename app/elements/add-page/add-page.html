@@ -51,10 +51,14 @@
             </div>
             <paper-input class="item item-input" label="Phone" flex>
             </paper-input>
-            <paper-dropdown-menu class="item item-menu" selected="Mobile" valueattr="label">
-              <paper-item label="Mobile"></paper-item>
-              <paper-item label="Work"></paper-item>
-              <paper-item label="Home"></paper-item>
+            <paper-dropdown-menu class="item item-menu">
+              <paper-dropdown class="dropdown" halign="right">
+                <core-menu class="menu" selected="Mobile" valueattr="label">
+                  <paper-item label="Mobile">Mobile</paper-item>
+                  <paper-item label="Work">Work</paper-item>
+                  <paper-item label="Home">Home</paper-item>
+                </core-menu>
+              </paper-dropdown>
             </paper-dropdown-menu>
           </div>
 
@@ -64,9 +68,13 @@
               <core-icon icon="mail"></core-icon>
             </div>
             <paper-input class="item item-input" label="Email" flex></paper-input>
-            <paper-dropdown-menu class="item item-menu" selected="Work" valueattr="label">
-              <paper-item label="Work"></paper-item>
-              <paper-item label="Home"></paper-item>
+            <paper-dropdown-menu class="item item-menu">
+              <paper-dropdown class="dropdown" halign="right">
+                <core-menu class="menu" selected="Work" valueattr="label">
+                  <paper-item label="Work">Work</paper-item>
+                  <paper-item label="Home">Home</paper-item>
+                </core-menu>
+              </paper-dropdown>
             </paper-dropdown-menu>
           </div>
 
@@ -76,9 +84,13 @@
               <core-icon icon="room"></core-icon>
             </div>
             <paper-input class="item item-input" label="Address" flex></paper-input>
-            <paper-dropdown-menu class="item item-menu" selected="Home" valueattr="label">
-              <paper-item label="Work"></paper-item>
-              <paper-item label="Home"></paper-item>
+            <paper-dropdown-menu class="item item-menu">
+              <paper-dropdown class="dropdown" halign="right">
+                <core-menu class="menu" selected="Home" valueattr="label">
+                  <paper-item label="Work">Work</paper-item>
+                  <paper-item label="Home">Home</paper-item>
+                </core-menu>
+              </paper-dropdown>
             </paper-dropdown-menu>
           </div>
 
