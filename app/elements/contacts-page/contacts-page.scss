@@ -10,6 +10,18 @@ core-toolbar {
   color: $light-text;
   background-color: $primary-color;
 }
+core-toolbar [icon="menu"] {
+  padding-left: 0;
+}
+#menuBtn {
+  margin-right: 0;
+}
+core-toolbar [icon="more-vert"] {
+  padding-right: 0;
+}
+#title {
+  margin-left: 16px;
+}
 paper-menu-button paper-item {
   color: $dark-text;
 }
@@ -21,18 +33,17 @@ paper-menu-button paper-item {
   text-decoration: none;
 }
 .row {
-  padding: 18px 16px;
-  border-bottom: 1px solid #E6E6E6;
+  padding: 16px 16px;
   cursor: pointer;
 }
 .row core-image {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: lightgray;
 }
 .row div {
-  margin-left: 28px;
+  margin-left: 16px;
 }
 paper-fab {
   position: fixed;

@@ -42,7 +42,7 @@
             </paper-icon-button>
             <div id="title" flex>{{heading}}</div>
 
-            <paper-menu-button noink>
+            <paper-menu-button id="menuBtn" noink>
               <paper-icon-button icon="more-vert" noink></paper-icon-button>
               <paper-dropdown class="dropdown" halign="right">
                 <core-menu class="menu">
@@ -57,7 +57,8 @@
           <div class="content">
 
             <core-list id="list" data="{{contacts}}"
-                                 scrollTarget="{{$.headerPanel.scroller}}">
+                                 scrollTarget="{{$.headerPanel.scroller}}"
+                                 runwayFactor="5">
               <template>
                 <a href="{{index | getUrl}}" on-click="{{navigate}}">
                   <div class="row" layout horizontal center>
