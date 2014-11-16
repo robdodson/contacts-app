@@ -13,11 +13,11 @@
     <core-header-panel id="headerPanel" fit mode="seamed">
 
       <core-toolbar>
-        <a href="../">
+        <a href="/" on-click="{{goBack}}">
           <paper-icon-button icon="arrow-back"></paper-icon-button>
         </a>
         <span flex></span>
-        <a href="../">
+        <a href="/" on-click="{{goBack}}">
           <paper-icon-button icon="check"></paper-icon-button>
         </a>
         <div id="title" class="bottom indent">John Doe</div>
@@ -32,7 +32,7 @@
         <!-- Contact form -->
         <div id="contactForm" style="position: relative;">
 
-          <a href="/#/add">
+          <a href="#">
             <paper-fab icon="image:camera-alt"></paper-fab>
           </a>
 

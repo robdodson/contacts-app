@@ -19,7 +19,7 @@
                               fixed?="{{largeScreen}}"
                               flex>
       <core-toolbar class="{{ {tall: !largeScreen} | tokenList}}">
-        <a href="/#/">
+        <a href="/" on-click="{{navigate}}">
           <paper-icon-button icon="arrow-back"></paper-icon-button>
         </a>
         <div id="title" class="bottom indent">{{contacts[contactId].name}}</div>

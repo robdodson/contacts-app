@@ -21,6 +21,10 @@
         navigate: function(e, detail, sender) {
           e.preventDefault();
           this.fire('change-route', sender.href);
+        },
+        goBack: function(e) {
+          e.preventDefault();
+          this.fire('change-route-back');
         }
       });
 

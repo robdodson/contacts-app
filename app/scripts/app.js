@@ -56,6 +56,11 @@
         router.setRoute(e.detail);
       }
     });
+    // Similar to change-route, listen for when a page wants to go
+    // back to the previous state and change the route for them
+    document.addEventListener('change-route-back', function(e) {
+      history.back();
+    });
 
     // Handle page transitions
     pages.addEventListener('core-animated-pages-transition-prepare', function() {
