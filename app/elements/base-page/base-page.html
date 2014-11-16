@@ -5,13 +5,22 @@
     (function () {
 
       Polymer({
+        // `willPrepare` is called by app.js when the
+        // core-animated-pages begins its
+        // 'core-animated-pages-transition-prepare' event.
+        // At this point the element is no longer display: none;
+        // so if you need to do anything with height in JavaScript
+        // this is the time to do it :)
         willPrepare: function() {
-          // `willPrepare` is called by app.js when the
-          // core-animated-pages begins its
-          // 'core-animated-pages-transition-prepare' event.
-          // At this point the element is no longer display: none;
-          // so if you need to do anything with height in JavaScript
-          // this is the time to do it :)
+        },
+
+        // `navigate` is called in response to someone clicking on
+        // an anchor tag. The normal click behavior is stopped to
+        // prevent a page refresh, and the href is sent to the router
+        // so it can change the current route
+        navigate: function(e, detail, sender) {
+          e.preventDefault();
+          this.fire('change-route', sender.href);
         }
       });
 

@@ -4,6 +4,9 @@ var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
 var mountFolder = function (connect, dir) {
   return connect.static(require('path').resolve(dir));
 };
+var redirection = function (connect) {
+  return connect().use(require('connect-redirection')());
+};
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -123,7 +126,11 @@ module.exports = function (grunt) {
             return [
               lrSnippet,
               mountFolder(connect, '.tmp'),
-              mountFolder(connect, yeomanConfig.app)
+              mountFolder(connect, yeomanConfig.app),
+              redirection(connect),
+              function(req, res, next) {
+                res.redirect('/');
+              }
             ];
           }
         }

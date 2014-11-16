@@ -17,13 +17,16 @@
     var infoPage = document.querySelector('info-page');
 
     // Setup routing
-    var contacts = function() {
+    var DEFAULT_ROUTE = '/contacts/all';
+
+    var contacts = function(category) {
+      app.category = category;
       pages.selected = 0;
     };
 
-    var info = function(contactId) {
+    var info = function(category, contactId) {
       if (!app.contacts) {
-        return router.setRoute('/');
+        return app.router.setRoute(DEFAULT_ROUTE);
       }
       infoPage.contactId = contactId;
       pages.selected = 1;
@@ -31,19 +34,28 @@
 
     var add = function() {
       if (!app.contacts) {
-        return router.setRoute('/');
+        return app.router.setRoute(DEFAULT_ROUTE);
       }
       pages.selected = 2;
     };
 
     var routes = {
-      '/': contacts,
-      'contacts/:id': info,
-      'add': add
+      '/contacts/:category': contacts,
+      '/contacts/:category/:id': info,
+      '/add': add
     };
 
-    var router = Router(routes);
-    router.init('/');
+    var router = app.router = Router(routes);
+    router.configure({html5history: true, strict: false});
+    router.init(DEFAULT_ROUTE);
+    // Listen for pages to fire their change-route event
+    // Instead of letting them change the route directly,
+    // handle the event here and change the route for them
+    document.addEventListener('change-route', function(e) {
+      if (e.detail) {
+        router.setRoute(e.detail);
+      }
+    });
 
     // Handle page transitions
     pages.addEventListener('core-animated-pages-transition-prepare', function() {
