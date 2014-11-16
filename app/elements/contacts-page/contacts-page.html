@@ -5,34 +5,39 @@
 <!-- <link rel="import" href="../../bower_components/paper-menu-button/paper-menu-button.html"> -->
 <!-- <link rel="import" href="../../bower_components/paper-dropdown/paper-dropdown.html"> -->
 
-
-<!--
-  TODO:
-  - Alphabetical grouping
--->
-
 <polymer-element name="contacts-page" extends="base-page" attributes="contacts">
   <template>
     <link rel="stylesheet" href="contacts-page.css">
 
-    <core-drawer-panel id="drawerPanel" responsiveWidth="10000px">
+    <core-drawer-panel id="drawerPanel" forceNarrow>
 
       <!-- Drawer -->
-      <core-scroll-header-panel drawer>
+      <core-header-panel drawer>
         <core-toolbar>Menu</core-toolbar>
-        <core-menu selected="0" content>
-          <paper-item label="All Contacts"></paper-item>
-          <paper-item label="Favorites"></paper-item>
-          <paper-item label="Circles"></paper-item>
+        <core-menu selected="0" on-core-select="{{closeDrawer}}">
+          <paper-item noink>
+            <a href="/contacts/all" on-click="{{navigate}}">
+              All Contacts
+            </a>
+          </paper-item>
+          <paper-item noink>
+            <a href="/contacts/favorites" on-click="{{navigate}}">
+              Favorites
+            </a>
+          </paper-item>
+          <paper-item noink>
+            <a href="/contacts/circles" on-click="{{navigate}}">
+              Circles
+            </a>
+          </paper-item>
         </core-menu>
-      </core-scroll-header-panel>
+      </core-header-panel>
 
       <!-- Main -->
       <div main layout vertical>
         <core-header-panel id="headerPanel" mode="seamed" flex>
           <core-toolbar>
-            <paper-icon-button id="btnMenu" icon="menu"
-                              on-tap="{{toggleDrawer}}">
+            <paper-icon-button icon="menu" core-drawer-toggle>
             </paper-icon-button>
             <div id="title" flex>All Contacts</div>
 
@@ -76,16 +81,15 @@
   <script>
   (function() {
     Polymer({
-      toggleDrawer: function() {
-        // replace with core-drawer-toggle attr when 0.5.0 lands
-        this.$.drawerPanel.togglePanel();
-      },
       willPrepare: function() {
         this.super();
         this.$.list.updateSize()
       },
       getUrl: function(idx) {
         return window.location.pathname + '/' + idx;
+      },
+      closeDrawer: function() {
+        this.$.drawerPanel.closeDrawer();
       }
     });
   })();

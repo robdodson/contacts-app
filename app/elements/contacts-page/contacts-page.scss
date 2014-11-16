@@ -1,13 +1,9 @@
 @import '../styles/base';
 
-core-drawer-panel:not([narrow]) #btnMenu {
-  display: none;
+core-menu a {
+  color: $dark-text;
 }
-// core-header-panel[mode="cover"]::shadow #mainContainer {
-//   left: 180px;
-// }
 .content {
-  // margin: 60px 180px 60px 0;
   background-color: #FFFFFF;
 }
 core-toolbar {
