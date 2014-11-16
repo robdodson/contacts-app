@@ -16,11 +16,10 @@
         <a href="/" on-click="{{goBack}}">
           <paper-icon-button icon="arrow-back"></paper-icon-button>
         </a>
-        <span flex></span>
+        <div id="title" flex>{{contactName}}</div>
         <a href="/" on-click="{{goBack}}">
           <paper-icon-button icon="check"></paper-icon-button>
         </a>
-        <div id="title" class="bottom indent">John Doe</div>
       </core-toolbar>
 
       <div class="content">
@@ -41,7 +40,9 @@
             <div class="item item-icon">
               <core-icon icon="social:person"></core-icon>
             </div>
-            <paper-input class="item item-input" label="Name" flex></paper-input>
+            <paper-input class="item item-input" label="Name"
+                         value="{{contactName}}" flex>
+            </paper-input>
           </div>
 
           <!-- Phone -->

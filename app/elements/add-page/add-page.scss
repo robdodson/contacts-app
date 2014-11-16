@@ -7,6 +7,14 @@ core-toolbar {
 core-toolbar a {
   color: $light-text;
 }
+core-toolbar [icon="arrow-back"] {
+  padding-left: 0;
+}
+#title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .content {
   background-color: #FFFFFF;
 }

@@ -16,6 +16,7 @@ core-toolbar a {
 }
 core-toolbar paper-icon-button {
   display: block;
+  padding-left: 0;
 }
 #title {
   -webkit-transform-origin: 0;
@@ -36,7 +37,7 @@ core-toolbar paper-icon-button {
 }
 .item core-icon {
   position: absolute;
-  left: 24px;
+  left: 16px;
   top: 24px;
   color: rgb(33, 33, 33);
 }
