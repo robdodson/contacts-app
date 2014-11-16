@@ -52,8 +52,7 @@
     <core-media-query query="min-width: 640px" queryMatches="{{largeScreen}}">
     </core-media-query>
 
-    <more-routing driver="hash"></more-routing>
-    <more-route-selector routes="['/add', '/contacts/:id', '/']"
+    <more-route-selector routes="['add', 'show', 'root']"
                          selectedIndex="{{selected}}"
                          selectedParams="{{params}}">
     </more-route-selector>
