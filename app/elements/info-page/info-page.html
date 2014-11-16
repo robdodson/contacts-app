@@ -18,8 +18,9 @@
                               condenses?="{{!largeScreen}}"
                               fixed?="{{largeScreen}}"
                               flex>
+
       <core-toolbar class="{{ {tall: !largeScreen} | tokenList}}">
-        <a href="/" on-click="{{navigate}}">
+        <a href="/" on-click="{{goBack}}">
           <paper-icon-button icon="arrow-back"></paper-icon-button>
         </a>
         <div id="title" class="bottom indent">{{contacts[contactId].name}}</div>
@@ -30,15 +31,15 @@
         <div class="group">
           <div class="item">
             <core-icon icon="communication:phone"></core-icon>
-            <div class="double-line-1">(315) 546-0060</div>
+            <div class="double-line-1">(555) 546-0060</div>
             <div class="double-line-2">Home</div>
           </div>
           <div class="item">
-            <div class="double-line-1">(675) 233-8464</div>
+            <div class="double-line-1">(555) 233-8464</div>
             <div class="double-line-2">Work</div>
           </div>
           <div class="item">
-            <div class="double-line-1">(797) 158-2516</div>
+            <div class="double-line-1">(555) 158-2516</div>
             <div class="double-line-2">Cell</div>
           </div>
         </div>
@@ -47,16 +48,16 @@
         <div class="group">
           <div class="item">
             <core-icon icon="mail"></core-icon>
-            <div class="double-line-1">(315) 546-0060</div>
+            <div class="double-line-1">truefacts@fruitbat.com</div>
             <div class="double-line-2">Home</div>
           </div>
           <div class="item">
-            <div class="double-line-1">(675) 233-8464</div>
+            <div class="double-line-1">parkourian@thegoogles.com</div>
             <div class="double-line-2">Work</div>
           </div>
           <div class="item">
-            <div class="double-line-1">(797) 158-2516</div>
-            <div class="double-line-2">Cell</div>
+            <div class="double-line-1">anakedpaul@http203.com</div>
+            <div class="double-line-2">Personal</div>
           </div>
         </div>
 
@@ -64,16 +65,16 @@
         <div class="group">
           <div class="item">
             <core-icon icon="room"></core-icon>
-            <div class="double-line-1">(315) 546-0060</div>
+            <div class="double-line-1">123 Chicken Dinner Drive</div>
             <div class="double-line-2">Home</div>
           </div>
           <div class="item">
-            <div class="double-line-1">(675) 233-8464</div>
+            <div class="double-line-1">414 Possum Avenue</div>
             <div class="double-line-2">Work</div>
           </div>
           <div class="item">
-            <div class="double-line-1">(797) 158-2516</div>
-            <div class="double-line-2">Cell</div>
+            <div class="double-line-1">1969 Sunshine Boardwalk</div>
+            <div class="double-line-2">Vacation</div>
           </div>
         </div>
       </div>
