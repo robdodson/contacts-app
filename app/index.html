@@ -47,37 +47,39 @@
   <template id="app" is="auto-binding">
 
     <core-ajax url="https://polymer-contacts.firebaseio.com/contacts.json"           response="{{contacts}}"
-               on-core-response="{{init}}"
                auto></core-ajax>
 
     <core-media-query query="min-width: 640px" queryMatches="{{largeScreen}}">
     </core-media-query>
 
-    <!-- TODO: Hero transition for desktop -->
+    <more-routing driver="hash"></more-routing>
+    <more-route-selector routes="['/add', '/contacts/:id', '/']"
+                         selectedIndex="{{selected}}"
+                         selectedParams="{{params}}">
+    </more-route-selector>
+
     <core-animated-pages id="pages" selected="{{selected}}"
                          transitions="cross-fade fade-scale" fit>
 
       <section layout vertical>
-        <contacts-page class="page" id="contacts" contacts="{{contacts}}"
-                       cross-fade?="{{largeScreen}}"
-                       flex>
-        </contacts-page>
+        <add-page class="page" id="add" contacts="{{contacts}}"
+                  fade-scale
+                  flex>
+        </add-page>
       </section>
 
       <section layout vertical>
         <info-page class="page" id="info" contacts="{{contacts}}"
-                   cross-fade?="{{largeScreen}}"
-                   fade-scale?="{{!largeScreen}}"
+                   params="{{params}}"
+                   fade-scale
                    flex>
         </info-page>
       </section>
 
       <section layout vertical>
-        <add-page class="page" id="add" contacts="{{contacts}}"
-                  cross-fade?="{{largeScreen}}"
-                  fade-scale?="{{!largeScreen}}"
-                  flex>
-        </add-page>
+        <contacts-page class="page" id="contacts" contacts="{{contacts}}"
+                       flex>
+        </contacts-page>
       </section>
 
     </core-animated-pages>
@@ -85,7 +87,6 @@
   </template>
 
   <!-- build:js scripts/app.js -->
-  <script src="bower_components/director/build/director.js"></script>
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
 </body>

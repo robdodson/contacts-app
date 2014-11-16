@@ -7,7 +7,8 @@
     "core-list": "Polymer/core-list#master",
     "core-image": "Polymer/core-image#master",
     "cache-polyfill": "coonsta/cache-polyfill",
-    "director": "~1.2.2"
+    "director": "~1.2.2",
+    "more-routing": "https://github.com/Polymore/more-routing.git"
   },
   "devDependencies": {
     "polymer-test-tools": "Polymer/polymer-test-tools#^0.4.2"

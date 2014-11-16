@@ -53,7 +53,7 @@
             <core-list id="list" data="{{contacts}}"
                                  scrollTarget="{{$.headerPanel.scroller}}">
               <template>
-                <a href="/#/contacts/{{index}}">
+                <a href="/#!/contacts/{{index}}">
                   <div class="row" layout horizontal center>
                     <core-image src="{{model.avatar}}" preload sizing="cover">
                     </core-image>
@@ -67,7 +67,7 @@
         </core-header-panel>
 
         <!-- Add contact -->
-        <a href="/#/add">
+        <a href="/#!/add">
           <paper-fab icon="add" noink></paper-fab>
         </a>
       </div>

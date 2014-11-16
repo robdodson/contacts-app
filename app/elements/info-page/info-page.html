@@ -2,7 +2,7 @@
 <link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
 <link rel="import" href="../../bower_components/core-icons/communication-icons.html">
 
-<polymer-element name="info-page" extends="base-page" attributes="contactId contacts" layout vertical>
+<polymer-element name="info-page" extends="base-page" attributes="params contacts" layout vertical>
   <template>
     <link rel="stylesheet" href="info-page.css">
 
@@ -19,10 +19,10 @@
                               fixed?="{{largeScreen}}"
                               flex>
       <core-toolbar class="{{ {tall: !largeScreen} | tokenList}}">
-        <a href="/#/">
+        <a href="/">
           <paper-icon-button icon="arrow-back"></paper-icon-button>
         </a>
-        <div id="title" class="bottom indent">{{contacts[contactId].name}}</div>
+        <div id="title" class="bottom indent">{{contacts[params.id].name}}</div>
       </core-toolbar>
       <div content>
 
@@ -104,12 +104,12 @@
         // so they see the full profile photo
         this.$.scrollHeaderPanel.scroller.scrollTop = 0;
       },
-      contactIdChanged: function(oldVal, newVal) {
+      paramsChanged: function(oldVal, newVal) {
         // Update the core-scroll-header-panel's background image with the
         // user's avatar if we're on a small screen
-        if (this.largeScreen) return;
+        if (!this.params.id || this.largeScreen) return;
 
-        this.$.scrollHeaderPanel.$.headerBg.style.background = 'url('+this.contacts[newVal].avatar+') 0 / cover no-repeat';
+        this.$.scrollHeaderPanel.$.headerBg.style.background = 'url('+this.contacts[this.params.id].avatar+') 0 / cover no-repeat';
       }
     });
   })();

@@ -13,37 +13,7 @@
   // Select auto-binding template and use as the top level of our app
   var app = document.querySelector('#app');
   app.addEventListener('template-bound', function() {
-    var pages = document.querySelector('#pages');
-    var infoPage = document.querySelector('info-page');
-
-    // Setup routing
-    var contacts = function() {
-      pages.selected = 0;
-    };
-
-    var info = function(contactId) {
-      if (!app.contacts) {
-        return router.setRoute('/');
-      }
-      infoPage.contactId = contactId;
-      pages.selected = 1;
-    };
-
-    var add = function() {
-      if (!app.contacts) {
-        return router.setRoute('/');
-      }
-      pages.selected = 2;
-    };
-
-    var routes = {
-      '/': contacts,
-      'contacts/:id': info,
-      'add': add
-    };
-
-    var router = Router(routes);
-    router.init('/');
+    var pages = document.querySelector('core-animated-pages');
 
     // Handle page transitions
     pages.addEventListener('core-animated-pages-transition-prepare', function() {
