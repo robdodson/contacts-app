@@ -24,7 +24,7 @@
 
     var contacts = function(category) {
       app.category = category;
-      app.$.ajax.go();
+      // app.$.ajax.go();
       app.heading = category.charAt(0).toUpperCase() + category.slice(1);
       if (app.heading === 'All') {
         app.heading = 'All Contacts';
