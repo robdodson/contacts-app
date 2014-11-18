@@ -27,6 +27,14 @@
       </core-toolbar>
       <div content>
 
+        <div class="card-header">
+          <div class="single-line" layout horizontal center>
+            <core-image src="{{contact_.avatar}}" preload sizing="cover">
+            </core-image>
+            <div class="card-name">{{contact_.name}}</div>
+          </div>
+        </div>
+
         <!-- Phone -->
         <div class="group">
           <div class="item">
@@ -106,11 +114,13 @@
         this.$.scrollHeaderPanel.scroller.scrollTop = 0;
       },
       contactIdChanged: function(oldVal, newVal) {
-        // Update the core-scroll-header-panel's background image with the
-        // user's avatar if we're on a small screen
+        this.contact_ = this.contacts[newVal];
+
         if (this.largeScreen) return;
 
-        this.$.scrollHeaderPanel.$.headerBg.style.background = 'url('+this.contacts[newVal].avatar+') 0 / cover no-repeat';
+        // Update the core-scroll-header-panel's background image with the
+        // user's avatar if we're on a small screen
+        this.$.scrollHeaderPanel.$.headerBg.style.background = 'url('+this.contact_.avatar+') 0 / cover no-repeat';
       }
     });
   })();

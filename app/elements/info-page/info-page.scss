@@ -26,6 +26,28 @@ core-toolbar paper-icon-button {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.card-header {
+  height: 260px;
+  background: url(/images/paperscape2.jpg);
+  background-size: cover;
+  color: #FFFFFF;
+  position: relative;
+}
+.card-header .single-line {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+}
+.card-header core-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.card-header .card-name {
+  color: #FFFFFF;
+  margin-left: 16px;
+  font-size: 24px;
+}
 .group {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 8px 0;
@@ -55,7 +77,8 @@ core-toolbar paper-icon-button {
     background-color: transparent;
   }
   [content] {
-    margin: 64px 256px;
+    width: 640px;
+    margin: 64px auto;
   }
   core-toolbar {
     color: #F1F1F1;

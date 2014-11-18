@@ -54,10 +54,11 @@
 
     <!-- TODO: Hero transition for desktop -->
     <core-animated-pages id="pages" selected="{{selected}}"
-                         transitions="cross-fade fade-scale" fit>
+                         transitions="cross-fade fade-slide-up fade-scale" fit>
 
       <section layout vertical>
         <contacts-page class="page" id="contacts" contacts="{{contacts}}"
+                       cross-fade?="{{largeScreen}}"
                        heading="{{heading}}"
                        flex>
         </contacts-page>
@@ -74,7 +75,7 @@
       <section layout vertical>
         <add-page class="page" id="add" contacts="{{contacts}}"
                   cross-fade?="{{largeScreen}}"
-                  fade-scale?="{{!largeScreen}}"
+                  fade-slide-up?="{{!largeScreen}}"
                   flex>
         </add-page>
       </section>
