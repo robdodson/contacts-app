@@ -72,7 +72,12 @@ core-toolbar [icon="arrow-back"] {
     background-color: transparent;
   }
   .content {
-    margin: 64px 448px;
-    padding: 32px;
+    margin: 64px auto;
+    padding-bottom: 16px;
+    width: 640px;
+  }
+
+  #contactPhoto {
+    height: 260px;
   }
 }
