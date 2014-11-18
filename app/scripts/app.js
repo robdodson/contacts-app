@@ -16,11 +16,15 @@
     var pages = document.querySelector('#pages');
     var infoPage = document.querySelector('info-page');
 
+    // Setup categories
+    app.category = 'all';
+
     // Setup routing
     var DEFAULT_ROUTE = '/contacts/all';
 
     var contacts = function(category) {
       app.category = category;
+      app.$.ajax.go();
       app.heading = category.charAt(0).toUpperCase() + category.slice(1);
       if (app.heading === 'All') {
         app.heading = 'All Contacts';
