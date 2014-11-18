@@ -2,9 +2,6 @@
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
 <link rel="import" href="../../bower_components/paper-item/paper-item.html">
-<link rel="import" href="../../bower_components/core-icons/communication-icons.html">
-<link rel="import" href="../../bower_components/core-icons/social-icons.html">
-<link rel="import" href="../../bower_components/core-icons/image-icons.html">
 
 <polymer-element name="add-page" extends="base-page" layout vertical>
   <template>
@@ -25,14 +22,14 @@
       <div class="content">
         <!-- Contact photo area -->
         <div id="contactPhoto" layout horizontal center-justified end>
-          <core-icon id="iconEmptyContact" icon="social:person"></core-icon>
+          <core-icon id="iconEmptyContact" icon="app:person"></core-icon>
         </div>
 
         <!-- Contact form -->
         <div id="contactForm" style="position: relative;">
 
           <a href="#">
-            <paper-fab icon="image:camera-alt"></paper-fab>
+            <paper-fab icon="app:camera-alt"></paper-fab>
           </a>
 
           <!-- Name -->
@@ -48,7 +45,7 @@
           <!-- Phone -->
           <div class="formRow" layout horizontal center>
             <div class="item item-icon">
-              <core-icon icon="communication:phone"></core-icon>
+              <core-icon icon="app:phone"></core-icon>
             </div>
             <paper-input class="item item-input" label="Phone" flex>
             </paper-input>

@@ -1,6 +1,5 @@
 <link rel="import" href="../base-page/base-page.html">
 <link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
-<link rel="import" href="../../bower_components/core-icons/communication-icons.html">
 
 <polymer-element name="info-page" extends="base-page" attributes="contactId contacts" layout vertical>
   <template>
@@ -27,7 +26,7 @@
       </core-toolbar>
       <div content>
 
-        <div class="card-header">
+        <div class="card-header" hidden?="{{!largeScreen}}">
           <div class="single-line" layout horizontal center>
             <core-image src="{{contact_.avatar}}" preload sizing="cover">
             </core-image>
@@ -38,7 +37,7 @@
         <!-- Phone -->
         <div class="group">
           <div class="item">
-            <core-icon icon="communication:phone"></core-icon>
+            <core-icon icon="app:phone"></core-icon>
             <div class="double-line-1">(555) 546-0060</div>
             <div class="double-line-2">Home</div>
           </div>
