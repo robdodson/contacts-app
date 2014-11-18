@@ -9,6 +9,14 @@ handlers:
   static_files: dist/index.html
   upload: dist/index.html
 
+- url: /contacts/(all|favorites|circles)
+  static_files: dist/index.html
+  upload: dist/index.html
+
+- url: /add
+  static_files: dist/index.html
+  upload: dist/index.html
+
 - url: /(.*)
   static_files: dist/\1
   upload: dist/.*

@@ -34,20 +34,21 @@
       && 'content' in document.createElement('template')) {
       // We're using a browser with native WC support!
     } else {
-      document.write('<script src="bower_components/webcomponentsjs/webcomponents.js"><\/script>');
+      document.write('<script src="/bower_components/webcomponentsjs/webcomponents.js"><\/script>');
     }
   </script>
 
-  <!-- build:vulcanized elements/elements.critical.vulcanized.html -->
-  <link rel="import" href="elements/elements.critical.html">
+  <!-- build:vulcanized /elements/elements.critical.vulcanized.html -->
+  <link rel="import" href="/elements/elements.critical.html">
   <!-- endbuild-->
 </head>
 
 <body unresolved>
   <template id="app" is="auto-binding">
 
-    <!-- <core-ajax id="ajax"
-               url="https://polymer-contacts.firebaseio.com/{{category}}.json"response="{{contacts}}"></core-ajax> -->
+    <core-ajax id="ajax"
+               url="https://polymer-contacts.firebaseio.com/{{category}}.json"
+               response="{{contacts}}"></core-ajax>
 
     <core-media-query query="min-width: 640px" queryMatches="{{largeScreen}}">
     </core-media-query>
@@ -84,9 +85,9 @@
 
   </template>
 
-  <!-- build:js scripts/app.js -->
-  <script src="bower_components/director/build/director.js"></script>
-  <script src="scripts/app.js"></script>
+  <!-- build:js /scripts/app.js -->
+  <script src="/bower_components/director/build/director.js"></script>
+  <script src="/scripts/app.js"></script>
   <!-- endbuild-->
 </body>
 

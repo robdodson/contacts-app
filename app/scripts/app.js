@@ -24,11 +24,15 @@
 
     var contacts = function(category) {
       app.category = category;
-      // app.$.ajax.go();
+      app.$.ajax.go();
       app.heading = category.charAt(0).toUpperCase() + category.slice(1);
       if (app.heading === 'All') {
         app.heading = 'All Contacts';
       }
+      // In a non-sample app you probably would want to match the
+      // routes to pages in a dictionary and then use valueattr on
+      // core-animated-pages to pickout which child matches the current route.
+      // To keep this sample easy, we're just manually changing the page number.
       pages.selected = 0;
     };
 
@@ -54,7 +58,7 @@
     };
 
     var router = app.router = Router(routes);
-    router.configure({html5history: true, strict: false});
+    router.configure({html5history: true});
     router.init(DEFAULT_ROUTE);
     // Listen for pages to fire their change-route event
     // Instead of letting them change the route directly,
