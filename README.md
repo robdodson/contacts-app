@@ -10,6 +10,7 @@
 ## What this app is not
 
 - Polished or bug free. It is totally lacking in the former, and chock full of the latter
+- Again, please file bug reports—or even better, submit pull requests ;)
 
 ## Getting Started
 
