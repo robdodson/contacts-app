@@ -40,7 +40,21 @@ paper-menu-button paper-item {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: lightgray;
+}
+#list a:nth-of-type(1n) core-image {
+  background-color: #FCE4EC;
+}
+#list a:nth-of-type(2n) core-image {
+  background-color: #F8BBD0;
+}
+#list a:nth-of-type(3n) core-image {
+  background-color: #F48FB1;
+}
+#list a:nth-of-type(4n) core-image {
+  background-color: #F06292;
+}
+#list a:nth-of-type(5n) core-image {
+  background-color: #EC407A;
 }
 .row div {
   margin-left: 16px;
