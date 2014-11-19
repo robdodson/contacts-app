@@ -2,7 +2,14 @@
 
 [Live link](http://cds-polymer.appspot.com) (view on phone or with mobile emulation in Chrome)
 
-Note: This app is currently only designed for mobile screens so you'll want to view it using mobile emulation in your browser or on a mobile device.
+## What this app is
+
+- A fun proof of concept to see what it's like to build an app with Polymer
+- A work in progress (please file bug reports and send pull requests)
+
+## What this app is not
+
+- Polished or bug free. It is totally lacking in the former, and chock full of the latter
 
 ## Getting Started
 
@@ -16,7 +23,3 @@ Note: This app is currently only designed for mobile screens so you'll want to v
 - Scroll through a list of contacts
 - Click the add button to see a mock 'add contact' page
 - Click a contact to see more info
-
-## Add to homescreen
-
-For the best experience you should add the app to your homescreen. That will get rid of the URL bar at the top and give you much more vertical room to scroll around
