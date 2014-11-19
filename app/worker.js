@@ -3,8 +3,8 @@ importScripts('/bower_components/cache-polyfill/dist/serviceworker-cache-polyfil
 // The SW will be shutdown when not in use to save memory,
 // be aware that any global state is likely to disappear
 
-var DEFAULT_CACHE = 'contacts-app-static10';
-var S3_CACHE = 'contacts-s3-static10';
+var DEFAULT_CACHE = 'contacts-app-cache1';
+var S3_CACHE = 'contacts-s3-cache1';
 
 console.log('SW startup', DEFAULT_CACHE);
 

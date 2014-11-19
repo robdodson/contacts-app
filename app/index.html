@@ -47,8 +47,9 @@
   <template id="app" is="auto-binding">
 
     <core-ajax id="ajax"
-               url="https://polymer-contacts.firebaseio.com/{{category}}.json"
-               response="{{contacts}}"></core-ajax>
+               url="https://polymer-contacts.firebaseio.com/all.json"
+               response="{{contacts}}"
+               auto></core-ajax>
 
     <core-media-query query="min-width: 640px" queryMatches="{{largeScreen}}">
     </core-media-query>
