@@ -2,13 +2,13 @@
   'use strict';
 
   // Install Service Worker
-  if (navigator.serviceWorker) {
-    navigator.serviceWorker.register('/worker.js').then(function(reg) {
-      console.log('◕‿◕', reg);
-    }, function(err) {
-      console.log('ಠ_ಠ', err);
-    });
-  }
+  // if (navigator.serviceWorker) {
+  //   navigator.serviceWorker.register('/worker.js').then(function(reg) {
+  //     console.log('◕‿◕', reg);
+  //   }, function(err) {
+  //     console.log('ಠ_ಠ', err);
+  //   });
+  // }
 
   // Select auto-binding template and use as the top level of our app
   var app = document.querySelector('#app');
