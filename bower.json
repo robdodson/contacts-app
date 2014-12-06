@@ -2,12 +2,12 @@
   "name": "contacts-app",
   "version": "0.1.0",
   "dependencies": {
-    "core-elements": "Polymer/core-elements#^0.5.1",
-    "paper-elements": "Polymer/paper-elements#^0.5.1",
+    "core-elements": "Polymer/core-elements#master",
+    "paper-elements": "Polymer/paper-elements#master",
     "cache-polyfill": "coonsta/cache-polyfill",
     "director": "~1.2.2"
   },
   "devDependencies": {
-    "polymer-test-tools": "Polymer/polymer-test-tools#^0.5.1"
+    "polymer-test-tools": "Polymer/polymer-test-tools#master"
   }
 }

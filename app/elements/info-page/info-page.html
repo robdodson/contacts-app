@@ -101,15 +101,15 @@
         });
       },
       willPrepare: function() {
-        this.super();
+        // this.super();
 
-        // Measure the core-scroll-header-panel, otherwise its height will
-        // be messed up
-        this.$.scrollHeaderPanel.measureHeaderHeight();
+        // // Measure the core-scroll-header-panel, otherwise its height will
+        // // be messed up
+        // this.$.scrollHeaderPanel.measureHeaderHeight();
 
-        // Reset the scroller so every time the user comes to the info page
-        // so they see the full profile photo
-        this.$.scrollHeaderPanel.scroller.scrollTop = 0;
+        // // Reset the scroller so every time the user comes to the info page
+        // // so they see the full profile photo
+        // this.$.scrollHeaderPanel.scroller.scrollTop = 0;
       },
       contactIdChanged: function(oldVal, newVal) {
         this.contact_ = this.contacts[newVal];
